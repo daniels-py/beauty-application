@@ -29,7 +29,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, "¡Registro exitoso!")
-            return redirect('home')  # Cambia 'home' a la vista a la que quieras redirigir
+            return redirect('login')  # Cambia 'home' a la vista a la que quieras redirigir
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
