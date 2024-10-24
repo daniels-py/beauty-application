@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 # Modelo para establecer un usuario personalizado
 AUTH_USER_MODEL = 'app_distributor.CustomUser'
 
+# Direccionamiento a una pantalla por defecto para cerrar la secion 
+
+LOGIN_URL = 'login'  # Nombre de la ruta para el inicio de sesión
 
 
 # Database

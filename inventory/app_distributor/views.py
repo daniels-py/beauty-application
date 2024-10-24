@@ -1,10 +1,21 @@
 # app_distributor/views.py
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from .forms import CustomUserCreationForm, CustomUserLoginForm
+from .forms import *
+from django.shortcuts import render, redirect
 
 
+# redireccionamiento para las vista por defecto de mi app 
+def admin_dashboard_view(request):
+    return render(request, 'admin_dashboard.html')
+
+def employee_dashboard_view(request):
+    return render(request, 'employee_dashboard.html')
+
+def Logout_View(request):
+    logout(request) 
+    return redirect('login')
 
 # Vistas para la creacion y inicio de secion del usuario
 
@@ -33,9 +44,18 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "¡Inicio de sesión exitoso!")
-                return redirect('home')  # Cambia 'home' a la vista a la que quieras redirigir
+                
+                # Verifica el rol del usuario y redirige a la pantalla correspondiente
+                if user.role == 'admin':
+                    return redirect('admin_dashboard')  # Vista para administradores
+                elif user.role == 'employee':
+                    return redirect('employee_dashboard')  # Vista para empleados
             else:
                 messages.error(request, "Usuario o contraseña incorrectos.")
     else:
         form = CustomUserLoginForm()
     return render(request, 'login.html', {'form': form})
+
+
+
+
