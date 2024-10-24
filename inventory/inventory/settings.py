@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'inventory.wsgi.application'
 
+# Modelo para establecer un usuario personalizado
+AUTH_USER_MODEL = 'app_distributor.CustomUser'
+
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
