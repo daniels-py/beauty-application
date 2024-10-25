@@ -6,10 +6,25 @@
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <h1>Iniciar Sesión</h1>
-    <form method="post">
+    <h3>Iniciar Sesión</h3>
+    <!-- Mostrar mensajes de error -->
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form method="post" autocomplete="off">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div>
+            <label for="login_user">Nombre de usuario:</label>
+            <input type="text" id="login_user" name="login_user" placeholder="Ingresa tu nombre de usuario" required>
+        </div>
+        <div>
+            <label for="login_pass">Contraseña:</label>
+            <input type="password" id="login_pass" name="login_pass" placeholder="Ingresa tu contraseña" required>
+        </div>
         <button type="submit">Iniciar Sesión</button>
     </form>
 </body>
