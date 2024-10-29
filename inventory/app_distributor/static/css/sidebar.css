@@ -1,17 +1,18 @@
+/*========== GOOGLE FONTS ==========*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-/* Formateo de página */
-* {
+/*========== BASE ==========*/
+*, ::before, ::after {
   box-sizing: border-box;
 }
 
 body {
-  margin: 3.5rem 0 0 0; /* altura del encabezado */
+  margin: 3.5rem 0 0 0;
   padding: 1rem 1rem 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.938rem;
-  background-color: #ffffff; /* Color de fondo */
-  color: #58555e; /* Color del texto */
+  font-family: 'Poppins', sans-serif;
+  font-size: .938rem;
+  background-color: #F9F6FD;
+  color: #58555E;
 }
 
 h3 {
@@ -27,17 +28,77 @@ img {
   height: auto;
 }
 
-/* Nav */
+/*========== HEADER ==========*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 0 rgba(22, 8, 43, 0.1);
+  padding: 0 1rem;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  justify-content: space-between;
+}
+
+.header__img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.header__logo {
+  color: #19181B;
+  font-weight: 500;
+  display: none;
+}
+
+.header__search {
+  display: flex;
+  padding: .40rem .75rem;
+  background-color: #F4F0FA;
+  border-radius: .25rem;
+}
+
+.header__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #F4F0FA;
+}
+
+.header__input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #58555E;
+}
+
+.header__icon, 
+.header__toggle {
+  font-size: 1.2rem;
+}
+
+.header__toggle {
+  color: #19181B;
+  cursor: pointer;
+}
+
+/*========== NAV ==========*/
 .nav {
   position: fixed;
   top: 0;
   left: -100%;
   height: 100vh;
   padding: 1rem 1rem 0;
-  background-color: #ffffff; /* Color del contenedor */
+  background-color: #FFFFFF;
   box-shadow: 1px 0 0 rgba(22, 8, 43, 0.1);
-  z-index: 100; /* Z-index fijo */
-  transition: 0.4s;
+  z-index: 100;
+  transition: .4s;
 }
 
 .nav__container {
@@ -47,7 +108,7 @@ img {
   justify-content: space-between;
   padding-bottom: 3rem;
   overflow: auto;
-  scrollbar-width: none;
+  scrollbar-width: none; /* For mozilla */
 }
 
 .nav__container::-webkit-scrollbar {
@@ -55,11 +116,12 @@ img {
 }
 
 .nav__logo {
-  font-weight: 600; /* Negrita */
+  font-weight: 600;
   margin-bottom: 2.5rem;
 }
 
-.nav__list, .nav__items {
+.nav__list, 
+.nav__items {
   display: grid;
 }
 
@@ -72,29 +134,29 @@ img {
 }
 
 .nav__subtitle {
-  font-size: 0.938rem;
+  font-size: .938rem;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #a5a1aa; /* Color del texto claro */
+  letter-spacing: .1rem;
+  color: #A5A1AA;
 }
 
 .nav__link {
   display: flex;
   align-items: center;
-  color: #6a5acd; /* Color morado pastel */
+  color: #58555E;
 }
 
 .nav__link:hover {
-  color: #ff69b4; /* Color rosa pastel al pasar el ratón */
+  color: #6923D0;
 }
 
 .nav__icon {
   font-size: 1.2rem;
-  margin-right: 0.5rem;
+  margin-right: .5rem;
 }
 
 .nav__name {
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -103,37 +165,38 @@ img {
   margin-top: 5rem;
 }
 
+/* Dropdown */
 .nav__dropdown {
   overflow: hidden;
   max-height: 21px;
-  transition: 0.4s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 .nav__dropdown-collapse {
-  background-color: #1d1b1f; /* Color claro */
-  border-radius: 0.25rem;
+  background-color: #F4F0FA;
+  border-radius: .25rem;
   margin-top: 1rem;
 }
 
 .nav__dropdown-content {
   display: grid;
-  row-gap: 0.5rem;
-  padding: 0.75rem 2.5rem 0.75rem 1.8rem;
+  row-gap: .5rem;
+  padding: .75rem 2.5rem .75rem 1.8rem;
 }
 
 .nav__dropdown-item {
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 500;
-  color: #58555e; /* Color del texto */
+  color: #58555E;
 }
 
 .nav__dropdown-item:hover {
-  color: #d0cd23; /* Color al pasar el ratón */
+  color: #6923D0;
 }
 
 .nav__dropdown-icon {
   margin-left: auto;
-  transition: 0.4s;
+  transition: .4s;
 }
 
 .nav__dropdown:hover {
@@ -144,41 +207,19 @@ img {
   transform: rotate(180deg);
 }
 
-/* Clases agregadas con JS */
 .show-menu {
   left: 0;
 }
 
 .active {
-  color: #5513f1; /* Color activo */
+  color: #6923D0;
 }
 
 
 
 
-.header-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #6a5acd; /* Color que combine con tu navbar */
-    cursor: pointer;
-    z-index: 200; /* Asegúrate de que esté por encima del menú */
-    display: none; /* Oculto por defecto */
-  }
-  
-  /* Mostrar el botón en pantallas pequeñas */
-  @media screen and (max-width: 768px) {
-    .header-toggle {
-      display: block; /* Mostrar el botón en pantallas pequeñas */
-    }
-  }
-  
 
-
-/* Media Queries */
+/* ========== MEDIA QUERIES ==========*/
 @media screen and (max-width: 320px) {
   .header__search {
     width: 70%;
@@ -189,42 +230,54 @@ img {
   body {
     padding: 1rem 3rem 0 6rem;
   }
-
+  .header {
+    padding: 0 3rem 0 6rem;
+  }
+  .header__container {
+    height: calc(3.5rem + .5rem);
+  }
+  .header__search {
+    width: 300px;
+    padding: .55rem .75rem;
+  }
+  .header__toggle {
+    display: none;
+  }
+  .header__logo {
+    display: block;
+  }
+  .header__img {
+    width: 40px;
+    height: 40px;
+    order: 1;
+  }
   .nav {
     left: 0;
     padding: 1.2rem 1.5rem 0;
     width: 68px;
   }
-
   .nav__items {
     row-gap: 1.7rem;
   }
-
   .nav__icon {
     font-size: 1.3rem;
   }
 
-  .nav__logo-name, .nav__name, .nav__subtitle, .nav__dropdown-icon {
+  .nav__logo-name, 
+  .nav__name, 
+  .nav__subtitle, 
+  .nav__dropdown-icon {
     opacity: 0;
-    transition: 0.3s;
+    transition: .3s;
   }
 
   .nav:hover {
-    width: 219px; /* Ancho de la navegación */
+    width: 219px;
   }
-
-  .nav:hover .nav__logo-name {
-    opacity: 1;
-  }
-
-  .nav:hover .nav__subtitle {
-    opacity: 1;
-  }
-
-  .nav:hover .nav__name {
-    opacity: 1;
-  }
-
+  
+  .nav:hover .nav__logo-name,
+  .nav:hover .nav__subtitle,
+  .nav:hover .nav__name,
   .nav:hover .nav__dropdown-icon {
     opacity: 1;
   }

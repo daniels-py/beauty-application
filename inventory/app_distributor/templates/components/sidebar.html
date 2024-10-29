@@ -1,4 +1,5 @@
 {% load static %}
+{% load django_browser_reload %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,58 +15,97 @@
 </head>
 <body>
 
-    <button id="header-toggle" class="header-toggle">
-        <i class="bx bx-menu"></i>
-    </button>
-    
+       <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img id="profile-pic" src="assets/img/perfil.jpg" alt="Perfil" class="header__img">
 
+            <a href="#" class="header__logo">Distribuidora Belleza</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Buscar" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mini Sidebar de Perfil -->
+    <div class="mini-sidebar" id="mini-sidebar" style="display: none;">
+        <h3>Perfil</h3>
+        <p>Nombre: [Nombre de Usuario]</p>
+        <p>Rol: [Rol del Usuario]</p>
+        <p>Email: [Email del Usuario]</p>
+        <button id="close-sidebar">Cerrar</button>
+    </div>
+
+    <!--========== NAV ==========-->
     <div class="nav" id="navbar">
         <nav class="nav__container">
             <div>
-                <a href="#" class="nav__subtitle">Inventario</a>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Distribuidora</span>
+                </a>
+
                 <div class="nav__list">
                     <div class="nav__items">
-                        <h3 class="nav__subtitle"></h3>
+                        <h3 class="nav__subtitle">Gestión</h3>
+
                         <a href="#" class="nav__link active">
-                            <i class="bx bx-home nav__icon"></i>
-                            <span class="nav__name">Dashboard</span>
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Inicio</span>
                         </a>
+                        
                         <a href="#" class="nav__link">
-                            <i class="bx bx-box nav__icon"></i>
-                            <span class="nav__name">Productos</span>
-                        </a>
-                        <a href="#" class="nav__link">
-                            <i class="bx bx-layer nav__icon"></i>
+                            <i class='bx bx-category nav__icon'></i>
                             <span class="nav__name">Categorías</span>
                         </a>
-                    </div>
-                    <div class="nav__items">
-                        <h3 class="nav__subtitle">Gestión</h3>
+
                         <a href="#" class="nav__link">
-                            <i class="bx bx-cart nav__icon"></i>
+                            <i class='bx bx-brush nav__icon'></i>
+                            <span class="nav__name">Marcas</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-box nav__icon'></i>
+                            <span class="nav__name">Productos</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-purchase-tag nav__icon'></i>
                             <span class="nav__name">Inventario</span>
                         </a>
+                        
                         <a href="#" class="nav__link">
-                            <i class="bx bx-user nav__icon"></i>
-                            <span class="nav__name">Usuarios</span>
+                            <i class='bx bx-palette nav__icon'></i>
+                            <span class="nav__name">Cartas de Color</span>
+                        </a>
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Usuario</h3>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Perfil</span>
+                        </a>
+
+                        <a href="#" class="nav__link nav__logout">
+                            <i class='bx bx-log-out nav__icon'></i>
+                            <span class="nav__name">Cerrar Sesión</span>
                         </a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="nav__link nav__logout">
-                <i class="bx bx-log-out nav__icon"></i>
-                <span class="nav__name">Cerrar Sesión</span>
-            </a>
         </nav>
     </div>
 
-    <main>
-        <section>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
-        </section>
-    </main>
+
+
 
     <script src="{% static 'js/sidebar.js' %}"></script>
 </body>
