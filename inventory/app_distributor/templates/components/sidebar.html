@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+</head>
+<body>
+
+    <button id="header-toggle" class="header-toggle">
+        <i class="bx bx-menu"></i>
+    </button>
+    
+
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__subtitle">Inventario</a>
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle"></h3>
+                        <a href="#" class="nav__link active">
+                            <i class="bx bx-home nav__icon"></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-box nav__icon"></i>
+                            <span class="nav__name">Productos</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-layer nav__icon"></i>
+                            <span class="nav__name">Categorías</span>
+                        </a>
+                    </div>
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Gestión</h3>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-cart nav__icon"></i>
+                            <span class="nav__name">Inventario</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class="bx bx-user nav__icon"></i>
+                            <span class="nav__name">Usuarios</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="nav__link nav__logout">
+                <i class="bx bx-log-out nav__icon"></i>
+                <span class="nav__name">Cerrar Sesión</span>
+            </a>
+        </nav>
+    </div>
+
+    <main>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolor fuga magni obcaecati eius saepe consectetur, odit suscipit qui laboriosam? Debitis maiores repudiandae hic mollitia corrupti, itaque esse consequuntur. Enim.</p>
+        </section>
+    </main>
+
+    <script src="{% static 'js/sidebar.js' %}"></script>
+</body>
+</html>
