@@ -33,14 +33,6 @@
         </div>
     </header>
 
-    <!-- Mini Sidebar de Perfil -->
-    <div class="mini-sidebar" id="mini-sidebar" style="display: none;">
-        <h3>Perfil</h3>
-        <p>Nombre: [Nombre de Usuario]</p>
-        <p>Rol: [Rol del Usuario]</p>
-        <p>Email: [Email del Usuario]</p>
-        <button id="close-sidebar">Cerrar</button>
-    </div>
 
     <!--========== NAV ==========-->
     <div class="nav" id="navbar">
@@ -94,7 +86,7 @@
                             <span class="nav__name">Perfil</span>
                         </a>
 
-                        <a href="#" class="nav__link nav__logout">
+                        <a href="{% url 'logout' %}" class="nav__link nav__logout">
                             <i class='bx bx-log-out nav__icon'></i>
                             <span class="nav__name">Cerrar Sesión</span>
                         </a>
