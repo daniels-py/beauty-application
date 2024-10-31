@@ -19,7 +19,17 @@ from .forms import *
 
 # redireccionamiento para las vista por defecto de mi app 
 def admin_dashboard_view(request):
-    return render(request, 'admin/admin_dashboard.html')
+    return render(request, 'admin/admin_dashboard.html', {'active_page': 'dashboard'})
+
+def admin_categorias_view(request):
+     # Esta línea pasa un diccionario al contexto del template,
+    # donde 'active_page' se establece como 'categorias'.
+    # Esto permite al template saber qué enlace del menú debe tener la clase 'active',
+    # indicando al usuario en qué sección de la aplicación se encuentra.
+    return render(request, 'admin/admin_categorias.html',{'active_page': 'categorias'})
+
+
+
 
 def employee_dashboard_view(request):
     return render(request, 'employee_dashboard.html')

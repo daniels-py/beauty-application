@@ -15,7 +15,7 @@
 </head>
 <body>
 
-       <!--========== HEADER ==========-->
+<!--========== HEADER ==========-->
     <header class="header">
         <div class="header__container">
             <img id="profile-pic" src="assets/img/perfil.jpg" alt="Perfil" class="header__img">
@@ -47,12 +47,12 @@
                     <div class="nav__items">
                         <h3 class="nav__subtitle">Gestión</h3>
 
-                        <a href="#" class="nav__link active">
+                        <a href="{% url 'admin_dashboard' %}" class="nav__link {% if active_page == 'dashboard' %}active{% endif %}"> <!-- Activa el estilo si estamos en la página de inicio -->
                             <i class='bx bx-home nav__icon'></i>
                             <span class="nav__name">Inicio</span>
                         </a>
                         
-                        <a href="#" class="nav__link">
+                        <a href="{% url 'admin_categorias' %}" class="nav__link {% if active_page == 'categorias' %}active{% endif %}">
                             <i class='bx bx-category nav__icon'></i>
                             <span class="nav__name">Categorías</span>
                         </a>

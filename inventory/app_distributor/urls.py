@@ -13,7 +13,11 @@ urlpatterns = [
 
     # vistas dedicadas 
     path('admin_dashboard/', admin_dashboard_view, name='admin_dashboard'),
+    path('admin_categorias/', admin_categorias_view, name='admin_categorias'),
+
+
     path('employee_dashboard/', employee_dashboard_view, name='employee_dashboard'),
+
 
 
 
