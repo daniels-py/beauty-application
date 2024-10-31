@@ -6,38 +6,44 @@
     padding: 20px; /* Espaciado interior */
 }
 
+h2 {
+    font-size: 15px;
+    color: #ffffff;
+}
+
 /* Estilos de cada bloque */
 .block {
-    background-color: #fff; /* Fondo blanco para los bloques */
+    background-color: #bc8ef5; /* Color pastel para el bloque de usuarios */
     border-radius: 10px; /* Bordes redondeados */
     padding: 1.5rem; /* Espaciado interior */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     text-align: center; /* Centra el texto */
-    transition: transform 0.3s; /* Transición suave para el efecto de hover */
+    transition: transform 0.3s, background-color 0.3s; /* Transición suave para el efecto de hover */
 }
 
 /* Efecto de hover para los bloques */
 .block:hover {
-    transform: translateY(-5px); /* Eleva el bloque al pasar el mouse */
+    transform: translateY(-5px) scale(1.05); /* Eleva y aumenta el bloque al pasar el mouse */
+    background-color: #a77cfe; /* Cambia a un color diferente al hacer hover */
 }
 
 /* Estilos para los iconos */
 .icon-user, .icon-category, .icon-brand, .icon-presentation, .icon-color, .icon-product {
-    font-size: 2rem; /* Tamaño del icono */
-    color: #6923D0; /* Color del icono */
+    font-size: 1.9rem; /* Tamaño del icono */
+    color: #fafafa; /* Color del icono */
     margin-bottom: 10px; /* Espacio debajo del icono */
 }
 
 /* Estilo para el contador */
 .count {
-    font-size: 2.5rem; /* Tamaño del texto del contador */
-    color: #6923D0; /* Color del texto del contador */
+    font-size: 1.2rem; /* Tamaño del texto del contador más pequeño */
+    color: #ffffff; /* Color del texto del contador */
     font-weight: bold; /* Negrita para el contador */
 }
 
 /* Estilo para el mensaje de no datos */
 .no-data {
-    font-size: 1.2rem; /* Tamaño del texto del mensaje */
-    color: #A5A1AA; /* Color gris claro */
+    font-size: 10px; /* Tamaño del texto del mensaje más pequeño */
+    color: #db2525; /* Color blanco para el mensaje */
     font-style: italic; /* Estilo en cursiva */
 }

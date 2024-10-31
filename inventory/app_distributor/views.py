@@ -35,13 +35,13 @@ def admin_categorias_view(request):
 
 # Contador general
 def get_dashboard_counts(request):
-    user_count = get_user_model().objects.count()
-    categoria_count = Categoria.objects.count()
-    marca_count = Marca.objects.count()
-    presentacion_count = Presentacion.objects.count()
-    carta_color_count = CartaColor.objects.count()
-    producto_count = Producto.objects.count()
-    inventario_count = Inventario.objects.count()
+    user_count = get_user_model().objects.count()  # Contar usuarios
+    categoria_count = Categoria.objects.count()  # Contar categorías
+    marca_count = Marca.objects.count()  # Contar marcas
+    presentacion_count = Presentacion.objects.count()  # Contar presentaciones
+    carta_color_count = CartaColor.objects.count()  # Contar cartas de color
+    producto_count = Producto.objects.count()  # Contar productos
+    inventario_count = Inventario.objects.count()  # Contar inventario
 
     data = {
         'user_count': user_count,
@@ -53,7 +53,6 @@ def get_dashboard_counts(request):
         'inventario_count': inventario_count,
     }
     return JsonResponse(data)
-
 
 def employee_dashboard_view(request):
     return render(request, 'employee_dashboard.html')
