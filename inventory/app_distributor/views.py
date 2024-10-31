@@ -31,6 +31,7 @@ def admin_categorias_view(request):
 
 
 
+
 def employee_dashboard_view(request):
     return render(request, 'employee_dashboard.html')
 

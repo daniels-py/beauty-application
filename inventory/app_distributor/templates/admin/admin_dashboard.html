@@ -9,19 +9,17 @@
 </head>
 <body>
     <h1>hola este es el panel adminstrador panel de control</h1>
-    <h1>ejemplo django v1</h1>
 
     
     {% include 'components/sidebar.html' %}
 
     <div id="content">
         {% block content %}
+            {% include 'components/dashboar_content.html' %}
         {% endblock %}
     </div>
 
-    <a href="{% url 'logout' %}" class="btn btn-outline-danger">
-        <i class="bi bi-box-arrow-right"></i> Cerrar sesión
-    </a>
+    
 
 </body>
 </html>
