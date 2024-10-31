@@ -9,12 +9,17 @@ from django.core.paginator import Paginator
 from django.db import DatabaseError
 from django.forms import ValidationError
 from django.http import JsonResponse
+from django.contrib.auth import get_user_model
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from app_distributor.models import *
 from django.views import View
 import json
 from .forms import * 
+
+
+
+
 
 
 # redireccionamiento para las vista por defecto de mi app 
@@ -28,8 +33,26 @@ def admin_categorias_view(request):
     # indicando al usuario en qué sección de la aplicación se encuentra.
     return render(request, 'admin/admin_categorias.html',{'active_page': 'categorias'})
 
+# Contador general
+def get_dashboard_counts(request):
+    user_count = get_user_model().objects.count()
+    categoria_count = Categoria.objects.count()
+    marca_count = Marca.objects.count()
+    presentacion_count = Presentacion.objects.count()
+    carta_color_count = CartaColor.objects.count()
+    producto_count = Producto.objects.count()
+    inventario_count = Inventario.objects.count()
 
-
+    data = {
+        'user_count': user_count,
+        'categoria_count': categoria_count,
+        'marca_count': marca_count,
+        'presentacion_count': presentacion_count,
+        'carta_color_count': carta_color_count,
+        'producto_count': producto_count,
+        'inventario_count': inventario_count,
+    }
+    return JsonResponse(data)
 
 
 def employee_dashboard_view(request):
@@ -81,9 +104,6 @@ def login_view(request):
 
 
 # CRUD y consumo de APIS
-
-
-
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarCategorias(View):
     def get(self, request):

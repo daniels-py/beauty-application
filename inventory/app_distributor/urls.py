@@ -14,7 +14,7 @@ urlpatterns = [
     # vistas dedicadas 
     path('admin_dashboard/', admin_dashboard_view, name='admin_dashboard'),
     path('admin_categorias/', admin_categorias_view, name='admin_categorias'),
-
+    path('dashboard/counts/', get_dashboard_counts, name='dashboard_counts'),  # Nueva URL para AJAX
 
     path('employee_dashboard/', employee_dashboard_view, name='employee_dashboard'),
 
