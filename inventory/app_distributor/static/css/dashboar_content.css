@@ -18,9 +18,9 @@ body {
     grid-template-columns: repeat(8, 50px); /* Ocho columnas de 50px cada una */
     grid-template-rows: repeat(8, 50px);    /* Ocho filas de 50px cada una */
     gap: 2px; /* Espacio entre celdas */
-    background-color: #1c1f24;
+    background-color: #1355c5;
     padding: 5px;
-    border: 2px solid #444;
+    border: 2px solid #ffffff;
     border-radius: 10px;
 }
 
