@@ -1,0 +1,135 @@
+/* Reseteo básico para márgenes y padding */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+    padding: 0; /* Elimina el padding predeterminado de todos los elementos */
+    box-sizing: border-box; /* Incluye padding y bordes en el ancho y alto total del elemento */
+}
+
+body {
+    display: flex; /* Activa el modelo Flexbox en el contenedor body */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del body */
+    align-items: center; /* Centra verticalmente los elementos dentro del body */
+    height: 100vh; /* Establece la altura del body al 100% de la altura de la ventana del navegador */
+    background-color: #282c34; /* Establece un color de fondo oscuro para el body */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* Ocho columnas de 50px cada una */
+    grid-template-rows: repeat(8, 50px);    /* Ocho filas de 50px cada una */
+    gap: 2px; /* Espacio entre celdas */
+    background-color: #1c1f24;
+    padding: 5px;
+    border: 2px solid #444;
+    border-radius: 10px;
+}
+
+/* Bloques de la cuadrícula con posiciones y tamaños únicos */
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    background-color: #61dafb;
+    border-radius: 4px;
+}
+
+/* Estilos únicos para cada bloque para simular las piezas de Tetris */
+.block1 {
+    grid-column: 1 / span 2; /* Ocupa 2 columnas */
+    grid-row: 1 / span 2;    /* Ocupa 2 filas */
+    background-color: #ff4757;
+}
+
+.block2 {
+    grid-column: 4 / span 3; /* Ocupa 3 columnas */
+    grid-row: 1 / span 1;    /* Ocupa 1 fila */
+    background-color: #ffa502;
+}
+
+.block3 {
+    grid-column: 1 / span 1; /* Ocupa 1 columna */
+    grid-row: 3 / span 4;    /* Ocupa 4 filas */
+    background-color: #2ed573;
+}
+
+.block4 {
+    grid-column: 5 / span 2; /* Ocupa 2 columnas */
+    grid-row: 3 / span 2;    /* Ocupa 2 filas */
+    background-color: #3742fa;
+}
+
+.block5 {
+    grid-column: 8 / span 1; /* Ocupa 1 columna */
+    grid-row: 2 / span 3;    /* Ocupa 3 filas */
+    background-color: #5352ed;
+}
+
+.block6 {
+    grid-column: 3 / span 2; /* Ocupa 2 columnas */
+    grid-row: 6 / span 3;    /* Ocupa 3 filas */
+    background-color: #eccc68;
+}
+
+.block7 {
+    grid-column: 6 / span 3; /* Ocupa 3 columnas */
+    grid-row: 6 / span 1;    /* Ocupa 1 fila */
+    background-color: #ff6b81;
+}
+
+.block8 {
+    grid-column: 1 / span 2; /* Ocupa 2 columnas */
+    grid-row: 8 / span 1;    /* Ocupa 1 fila */
+    background-color: #1e90ff;
+}
+
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* Cambia a 4 columnas */
+        grid-template-rows: repeat(4, 1fr); /* Cambia a 4 filas */
+    }
+
+    /* Ajusta el tamaño de los bloques para la cuadrícula más pequeña */
+    .block1 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .block2 {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .block3 {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 2;
+    }
+
+    .block4 {
+        grid-column: 3 / span 2;
+        grid-row: 2 / span 1;
+    }
+
+    .block5 {
+        grid-column: 4 / span 1;
+        grid-row: 2 / span 2;
+    }
+
+    .block6 {
+        grid-column: 1 / span 2;
+        grid-row: 4 / span 1;
+    }
+
+    .block7 {
+        grid-column: 3 / span 2;
+        grid-row: 4 / span 1;
+    }
+
+    .block8 {
+        grid-column: 1 / span 2;
+        grid-row: 5 / span 1;
+    }
+}
