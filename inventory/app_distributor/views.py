@@ -258,48 +258,6 @@ class CrearMarca(View):
             return JsonResponse({'error': 'Datos inválidos.'}, status=400)
         except DatabaseError:
             return JsonResponse({'error': 'Error al crear la marca.'}, status=500)
-
-@method_decorator(csrf_exempt, name='dispatch')
-class ListarPresentaciones(View):
-    def get(self, request):
-        try:
-            presentaciones = Presentacion.objects.all()
-
-            # Estructura de datos más detallada
-            datos_presentaciones = {
-                'presentaciones': [
-                    {
-                        'id': presentacion.id,
-                        'nombre': presentacion.nombre,
-                        'productos_asociados_count': presentacion.productos.count(),
-                        'descripcion': presentacion.descripcion if hasattr(presentacion, 'descripcion') else 'Descripción no disponible',  # Suponiendo que tienes un campo descripción en Presentacion
-                    }
-                    for presentacion in presentaciones
-                ]
-            }
-
-            if not datos_presentaciones['presentaciones']:
-                return JsonResponse({'mensaje': 'Presentaciones no disponibles'}, status=404)
-
-            return JsonResponse(datos_presentaciones, status=200)
-
-        except DatabaseError:
-            return JsonResponse({'error': 'Error al obtener las presentaciones'}, status=500)
-@method_decorator(csrf_exempt, name='dispatch')
-class CrearPresentacion(View):
-    def post(self, request):
-        try:
-            data = json.loads(request.body)
-            nombre = data.get('nombre')
-            if not nombre:
-                return JsonResponse({'error': 'El nombre es obligatorio'}, status=400)
-
-            presentacion = Presentacion.objects.create(nombre=nombre)
-            return JsonResponse({'id': presentacion.id, 'nombre': presentacion.nombre}, status=201)
-
-        except json.JSONDecodeError:
-            return JsonResponse({'error': 'Datos inválidos'}, status=400)
-
 @method_decorator(csrf_exempt, name='dispatch')
 class ActualizarMarca(View):
     def post(self, request, id):
