@@ -19,9 +19,6 @@ from .forms import *
 
 
 
-
-
-
 # redireccionamiento para las vista por defecto de mi app 
 def admin_dashboard_view(request):
     return render(request, 'admin/admin_dashboard.html', {'active_page': 'dashboard'})
@@ -60,6 +57,7 @@ def employee_dashboard_view(request):
 def Logout_View(request):
     logout(request) 
     return redirect('login')
+
 
 # Vistas para la creacion y inicio de secion del usuario
 
@@ -102,7 +100,7 @@ def login_view(request):
 
 
 
-# CRUD y consumo de APIS
+# CRUD y consumo de APIS Categorias
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarCategorias(View):
     def get(self, request):
@@ -212,7 +210,7 @@ class EliminarCategoria(View):
             return JsonResponse({'error': 'Error al eliminar la categoría.'}, status=500)
 
 
-
+# CRUD y consumo de APIS Marcas
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarMarcas(View):
     def get(self, request):
@@ -290,7 +288,7 @@ class EliminarMarca(View):
             return JsonResponse({'error': 'Error al eliminar la marca.'}, status=500)
 
 
-
+# CRUD y consumo de APIS Presentaciones
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarPresentaciones(View):
     def get(self, request):
@@ -397,7 +395,7 @@ class EliminarPresentacion(View):
             return JsonResponse({'error': 'Error al eliminar la presentación.'}, status=500)
 
 
-
+# CRUD y consumo de APIS Carta de color 
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarCartasColor(View):
     def get(self, request):
@@ -494,7 +492,7 @@ class EliminarCartaColor(View):
 
 
 
-
+# CRUD y consumo de APIS Productos
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarProductos(View):
     def get(self, request):
@@ -632,7 +630,7 @@ class EliminarProducto(View):
             return JsonResponse({'error': 'Error al eliminar el producto.'}, status=500)
 
 
-
+# CRUD y consumo de APIS Inventario
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarInventario(View):
     def get(self, request):
