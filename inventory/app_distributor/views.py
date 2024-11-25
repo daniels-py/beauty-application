@@ -1,24 +1,14 @@
 # app_distributor/views.py
+from sqlite3 import DatabaseError
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
-from django.core.paginator import Paginator
-from django.db import DatabaseError
-from django.forms import ValidationError
-from django.http import JsonResponse
-from django.contrib.auth import get_user_model
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
 from app_distributor.models import *
-from django.views import View
-import json
 from .forms import * 
-from rest_framework import generics
 from .serializers import *
-
+from rest_framework import generics
+from django.contrib import messages
+from rest_framework.response import Response
+from rest_framework.pagination import PageNumberPagination
 
 
 # redireccionamiento para las vista por defecto de mi app 
@@ -82,66 +72,39 @@ def login_view(request):
 
 
 
+# Vistas para las Categorías framework django rest end point
 
+# Definición de la paginación
+class CategoriaPagination(PageNumberPagination):
+    page_size = 10  # Número de elementos por página
+    page_size_query_param = 'page_size'  # Parámetro para especificar el tamaño de la página
+    max_page_size = 100  # Máximo número de elementos por página
 
-# Vistas para las Categorías framework django rest
+# Vista para listar y crear categorías con paginación
 class CategoriaListCreateView(generics.ListCreateAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
+    pagination_class = CategoriaPagination  # Aplica la paginación a esta vista
 
-
-
-# CRUD y consumo de APIS por defecto django
-@method_decorator(csrf_exempt, name='dispatch')
-class ListarCategorias(View):
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         try:
-            nombre = request.GET.get('nombre')
-            categorias = Categoria.objects.all()
+            queryset = self.get_queryset()  # Obtiene todas las categorías
+            if not queryset.exists():  # Verifica si hay categorías
+                return Response({"categorias": [], "message": "No existen datos registrados"}, status=404)
 
-            if nombre:
-                categorias = categorias.filter(nombre__icontains=nombre)
+            paginator = self.pagination_class()  # Crea una instancia del paginador
+            page_obj = paginator.paginate_queryset(queryset, request)  # Aplica la paginación
 
-            # Validación del número de página
-            page_number = self._get_page_number(request)
-            page_size = self._get_page_size(request)
+            # Si hay una página, serializa los datos y devuelve la respuesta con paginación
+            if page_obj is not None:
+                serializer = self.get_serializer(page_obj, many=True)
+                return paginator.get_paginated_response({"categorias": serializer.data})
 
-            paginator = Paginator(categorias, page_size)
-            page_obj = paginator.get_page(page_number)
-
-            datos_categorias = [
-                {
-                    'id': categoria.id,
-                    'nombre': categoria.nombre,
-                    'descripcion': categoria.descripcion,
-                    'permite_color': categoria.permite_color
-                }
-                for categoria in page_obj
-            ]
-
-            if not datos_categorias:
-                return JsonResponse({'message': 'No hay categorías disponibles'}, status=404)
-
-            return JsonResponse({
-                'categorias': datos_categorias,
-                'page': page_obj.number,
-                'pages': paginator.num_pages,
-                'total': paginator.count
-            })
+            # Si no hay paginación, simplemente devuelve todos los datos dentro de "categorias"
+            serializer = self.get_serializer(queryset, many=True)
+            return Response({"categorias": serializer.data, "total": queryset.count()})
 
         except DatabaseError as db_err:
-            return JsonResponse({'error': 'Error en la base de datos: ' + str(db_err)}, status=500)
+            return Response({"error": f"Error en la base de datos: {str(db_err)}"}, status=500)
         except Exception as e:
-            return JsonResponse({'error': 'Error interno: ' + str(e)}, status=500)
-
-    def _get_page_number(self, request):
-        try:
-            return int(request.GET.get('page', 1))
-        except (ValueError, TypeError):
-            return 1
-
-    def _get_page_size(self, request):
-        try:
-            return min(int(request.GET.get('page_size', 10)), 100)  # Límite de 100 por página
-        except (ValueError, TypeError):
-            return 10  # Valor predeterminado
+            return Response({"error": f"Error interno: {str(e)}"}, status=500)

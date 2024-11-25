@@ -24,7 +24,6 @@ urlpatterns = [
 
 
     # Categorías
-    path('categorias/', ListarCategorias.as_view(), name='listar_categorias'),
     path('categorias-rest/', views.CategoriaListCreateView.as_view(), name='categoria-list-create'),
     
 ]
