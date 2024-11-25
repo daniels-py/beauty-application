@@ -16,6 +16,8 @@ from app_distributor.models import *
 from django.views import View
 import json
 from .forms import * 
+from rest_framework import generics
+from .serializers import *
 
 
 
@@ -82,7 +84,14 @@ def login_view(request):
 
 
 
-# CRUD y consumo de APIS Categorias
+# Vistas para las Categorías framework django rest
+class CategoriaListCreateView(generics.ListCreateAPIView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+
+
+# CRUD y consumo de APIS por defecto django
 @method_decorator(csrf_exempt, name='dispatch')
 class ListarCategorias(View):
     def get(self, request):

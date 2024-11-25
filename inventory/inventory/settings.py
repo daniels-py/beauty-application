@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_distributor',
     'django_browser_reload',# nombre de aplicacion para recargar el serviro web
+    'rest_framework',# esto es el framework para mejorar la app en esta version 
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,6 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 AUTH_USER_MODEL = 'app_distributor.CustomUser'
 
 # Direccionamiento a una pantalla por defecto para cerrar la secion 
-
 LOGIN_URL = 'login'  # Nombre de la ruta para el inicio de sesión
 
 
