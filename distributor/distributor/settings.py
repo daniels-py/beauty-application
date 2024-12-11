@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'inventory',
     #complementos
     'rest_framework',
+    'rest_framework_simplejwt',
     'django_browser_reload',# nombre de aplicacion para recargar el serviro web
 ]
 
@@ -76,8 +77,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'distributor.wsgi.application'
 
-# settings.py
+# settings.py validacion de django rest para mi version mas reciente 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
 
 
 # Database

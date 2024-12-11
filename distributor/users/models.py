@@ -5,12 +5,10 @@ class CustomUser(AbstractUser):
     ROLE_CHOICES = (
         ('admin', 'Administrador'),
         ('employee', 'Empleado'),
-        ('common_user', 'Usuario Común'),  # Rol adicional para usuarios comunes
+        ('common_user', 'Usuario Común'),
     )
     role = models.CharField(max_length=15, choices=ROLE_CHOICES, default='common_user')
 
     def __str__(self):
-        return self.username
-
-
-
+        # Aquí puedes modificar la representación para usar el nombre completo
+        return f"{self.first_name} {self.last_name}"
