@@ -1,7 +1,6 @@
 from rest_framework import viewsets
 from .models import *
 from .serializers import  CategoriaSerializer, MarcaSerializer, PresentacionSerializer, CartaColorSerializer, ProductoSerializer
-
 from .permissions import IsAdminUserRole  # Importa el permiso personalizado
 
 class ProductoViewSet(viewsets.ModelViewSet):
