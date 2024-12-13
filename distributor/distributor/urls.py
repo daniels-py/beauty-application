@@ -23,7 +23,7 @@ urlpatterns = [
 
 
 
-    path('api/products/', include('products.urls')),  # Ruta para el módulo de productos
+    path('api/products/', include('products.urls')),  # Ruta para el módulo de 'productos'
     path('api/users/', include('users.urls')),    # Incluye las URLs de la aplicación 'users'
     path('api/inventory/', include('inventory.urls')),  # Incluye las URLs de la aplicación 'inventory'
     
