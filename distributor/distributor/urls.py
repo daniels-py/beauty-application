@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/products/', include('products.urls')),  # Ruta para el módulo de 'productos'
     path('api/users/', include('users.urls')),    # Incluye las URLs de la aplicación 'users'
     path('api/inventory/', include('inventory.urls')),  # Incluye las URLs de la aplicación 'inventory'
+    path('api/store/', include('store.urls')),  # Incluye las rutas de store
     
     # extencion para cargar automatica en vistar genericas
     path("__reload__/", include("django_browser_reload.urls")),
