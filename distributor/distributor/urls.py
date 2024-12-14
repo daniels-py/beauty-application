@@ -21,14 +21,15 @@ from django_browser_reload import urls as browser_reload_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # Rutas de la API
+    path('api/products/', include('products.urls')),  # Ruta para la app 'products'
+    path('api/users/', include('users.urls')),  # Rutas de la app 'users'
+    path('api/inventory/', include('inventory.urls')),  # Rutas de la app 'inventory'
 
+    # Rutas estándar (no API) para la app 'store'
+    path('store/', include('store.urls')),  # Rutas de la app 'store' (registro de usuarios comunes, etc.)
 
-    path('api/products/', include('products.urls')),  # Ruta para el módulo de 'productos'
-    path('api/users/', include('users.urls')),    # Incluye las URLs de la aplicación 'users'
-    path('api/inventory/', include('inventory.urls')),  # Incluye las URLs de la aplicación 'inventory'
-    path('api/store/', include('store.urls')),  # Incluye las rutas de store
-    
-    # extencion para cargar automatica en vistar genericas
+    # Extensión para cargar automáticamente vistas genéricas
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 

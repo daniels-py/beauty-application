@@ -11,9 +11,12 @@ class RegisterCommonUserView(APIView):
     Vista para registrar usuarios comunes (clientes).
     """
     def post(self, request):
+        # Recibimos los datos del formulario a través del cuerpo de la solicitud
         serializer = RegisterSerializer(data=request.data)
+        
+        # Verificamos si los datos son válidos
         if serializer.is_valid():
-            user = serializer.save()  # Guardamos el usuario
+            user = serializer.save()  # Guardamos el usuario en la base de datos
 
             # Asignamos el rol de usuario común
             user.role = 'common_user'
@@ -22,6 +25,7 @@ class RegisterCommonUserView(APIView):
             # Generamos tokens para el usuario registrado
             refresh = RefreshToken.for_user(user)
 
+            # Enviamos una respuesta exitosa con los tokens de acceso y actualización
             return Response(
                 {
                     "message": "Usuario común registrado exitosamente.",
@@ -30,8 +34,9 @@ class RegisterCommonUserView(APIView):
                 },
                 status=status.HTTP_201_CREATED
             )
+        
+        # Si los datos no son válidos, devolvemos un error con los detalles
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 class RegisterEmployeeAdminView(APIView):
     """

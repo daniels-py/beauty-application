@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.views import View
 
-# Create your views here.
-
-def render(request):
-    return render(request, 'store/home.html')
+class RegisterUserView(View):
+    """
+    Vista para renderizar la plantilla de registro de usuario común.
+    """
+    def get(self, request):
+        return render(request, 'store/register.html')
