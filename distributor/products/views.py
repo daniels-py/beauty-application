@@ -1,12 +1,12 @@
 from rest_framework import viewsets
 from .models import *
 from .serializers import  CategoriaSerializer, MarcaSerializer, PresentacionSerializer, CartaColorSerializer, ProductoSerializer
-from .permissions import IsAdminUserRole  # Importa el permiso personalizado
+from .permissions import IsAdminUserRole  # Importa el permiso personalizado para el tipo de usuario que yo quiera
 
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
-    permission_classes = [IsAdminUserRole]  # Aplica el permiso
+    permission_classes = [IsAdminUserRole]  # Aplica el permiso predeterminado por ahora 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
