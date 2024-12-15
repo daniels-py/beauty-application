@@ -75,7 +75,6 @@ class RegisterEmployeeAdminView(APIView):
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
 class LoginView(APIView):
     """
     Vista para iniciar sesión.
