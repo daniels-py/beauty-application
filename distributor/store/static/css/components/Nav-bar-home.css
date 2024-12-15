@@ -1,0 +1,170 @@
+/* Estilos generales para todos los elementos */
+* {
+    margin: 0; /* Eliminar márgenes predeterminados */
+    padding: 0; /* Eliminar rellenos predeterminados */
+    box-sizing: border-box; /* Incluir el relleno y los bordes en el ancho y alto total */
+    font-family: 'Source Sans Pro', sans-serif; /* Tipografía general */
+}
+
+body {
+    background-color: #f7f7f7; /* Color de fondo blanco */
+}
+
+/* Estilos para el encabezado */
+header {
+    width: 100%; /* Ancho completo del encabezado */
+    height: 80px; /* Altura del encabezado */
+    position: fixed; /* Fijar el encabezado en la parte superior */
+    top: 0; /* Alinear en la parte superior */
+    z-index: 1; /* Asegurar que esté por encima de otros elementos */
+    padding: 40px; /* Relleno interior del encabezado */
+    background-color: rgb(255, 255, 255); /* Fondo semi-transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+}
+
+/* Contenedor del menú */
+.container__menu {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    height: 100%; /* Altura del contenedor */
+    margin: auto; /* Centrar el contenedor */
+    display: flex; /* Usar flexbox para alineación */
+    justify-content: space-between; /* Espacio entre logo y menú */
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 100%; /* Altura completa del contenedor */
+    display: flex; /* Usar flexbox para alineación */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.logo img {
+    width: 130px; /* Ancho del logo */
+}
+
+/* Estilos para el menú de navegación */
+.menu {
+    display: flex; /* Usar flexbox para alineación */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.menu ul {
+    display: flex; /* Mostrar lista como flexbox */
+}
+
+/* Estilos para los elementos de la lista del menú */
+.menu ul li {
+    list-style: none; /* Eliminar viñetas de la lista */
+    margin-left: 36px; /* Espacio entre elementos de la lista */
+}
+
+/* Estilos para los enlaces del menú */
+.menu ul li a {
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    font-size: 13px; /* Tamaño de fuente para enlaces */
+    color: rgb(26, 23, 23); /* Color del texto del enlace */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: color 300ms; /* Transición suave para el color */
+    font-weight: 5000; /* Grosor de letra ligeramente mayor */
+}
+
+/* Efecto hover para enlaces */
+.menu ul li a:hover {
+    color: #af8fec; /* Color al pasar el cursor */
+}
+
+/* Estilos para el botón seleccionado */
+#selected {
+    background: linear-gradient(to right, #8d85e2, #4fa8f1,#8c84cf); /* Fondo degradado */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre él */
+    box-shadow: 1px 1px 30px -12px #e6e6e6; /* Sombra para resaltar */
+    transition: all 300ms; /* Transición suave para todos los cambios */
+    padding: 10px 40px; /* Relleno interior del botón */
+    border-radius: 50px; /* Bordes redondeados */
+}
+
+/* Estilos para el icono del menú (versión responsive) */
+.menu nav img {
+    display: none; /* Ocultar por defecto */
+}
+
+/* Botón del menú (versión responsive) */
+.menu #btn_menu {
+    display: none; /* Ocultar por defecto */
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media screen and (max-width: 720px) {
+    .menu nav {
+
+        border-radius: 10px;
+        position: fixed; /* Fijar el menú lateral */
+        top: 0; /* Alinear en la parte superior */
+        right: -250px; /* Comenzar fuera de la vista */
+        background: #eceaeafa; /* Fondo semi-transparente oscuro */
+        width: 250px; /* Ancho del menú lateral */
+        height: 100vh; /* Altura completa de la vista */
+        padding: 40px; /* Relleno interior del menú */
+        z-index: 1; /* Asegurar que esté por encima de otros elementos */
+        transition: all 300ms; /* Transición suave para el menú */
+    }
+
+    .menu ul {
+        flex-direction: column; /* Cambiar la dirección de los elementos a columna */
+        margin-top: 40px; /* Espacio superior para la lista */
+    }
+
+    .menu ul li {
+        margin-top: 30px; /* Espacio superior entre elementos */
+        margin-left: 0; /* Sin margen a la izquierda */
+    }
+
+    .menu ul li a {
+        color: #181717; /* Color del texto en el menú lateral */
+    }
+
+    /* Estilos del botón seleccionado en versión responsive */
+    #selected {
+        background: none; /* Sin fondo para el botón seleccionado */
+        padding: 0px; /* Sin relleno */
+        border-radius: none; /* Sin bordes redondeados */
+        color: #8acbff; /* Color del texto */
+    }
+
+    .menu nav img {
+        display: block; /* Mostrar el icono del menú */
+        width: 60px; /* Ancho del icono */
+    }
+
+    /* Estilo para el fondo al abrir el menú */
+    #back_menu {
+        position: fixed; /* Fijar el fondo */
+        top: 0; /* Alinear en la parte superior */
+        left: 0; /* Alinear a la izquierda */
+        width: 100%; /* Ancho completo */
+        height: 100vh; /* Altura completa de la vista */
+        background: rgba(29, 28, 28, 0.5); /* Fondo oscuro semi-transparente */
+        display: none; /* Ocultar por defecto */
+    }
+
+    /* Botón para abrir el menú */
+    .menu #btn_menu {
+        display: flex; /* Mostrar el botón */
+        align-items: center; /* Centrar verticalmente */
+        justify-content: center; /* Centrar horizontalmente */
+        width: 50px; /* Ancho del botón */
+        height: 50px; /* Altura del botón */
+        background: rgba(240, 231, 231, 0.1); /* Fondo semi-transparente */
+        font-size: 24px; /* Tamaño del icono */
+        border-radius: 50px; /* Bordes redondeados */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre él */
+        transition: all 300ms; /* Transición suave para todos los cambios */
+    }
+
+    /* Efecto hover para el botón del menú */
+    .menu #btn_menu:hover {
+        background: rgba(255, 255, 255, 0.2); /* Cambiar el fondo al pasar el cursor */
+    }
+}
+
