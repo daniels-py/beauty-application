@@ -9,64 +9,40 @@
     <link rel="stylesheet" href="{% static 'css/components/Nav-bar-home.css' %}">
     <link rel="stylesheet" href="{% static 'css/components/Footer-home.css' %}">
     <link rel="stylesheet" href="{% static 'css/pages/Home.css' %}">
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
-    <header>
+   
 
-        <div class="container__menu">
-            <div class="logo">
-                <img src="{% static 'images/make-up.jpg' %}" alt="">
-            </div>
-            <div class="menu">
-                <i class="fas fa-bars" id="btn_menu" style="color: #524f4f;"></i>
-                <div id="back_menu"></div>
-                <nav id="nav">
-                    <img src="" alt="">
-                    <ul>
-                        <li><a href="/Principal" id="">Principal</a></li>
-                        <li><a href="/Informacion">Informacion</a></li>
-                        <li><a href="/Nosotros" >Nosotros</a></li>
-                        <li><a href="/iniciarSesion">Iniciar sesion</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+      <!-- Menú de navegación -->
+      <nav>
+        <div class="logo">LOGO</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <!-- Ícono del menú hamburguesa -->
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <div class="navbar" id="navbar">
+            <a href="#principal">Principal</a>
+            <a href="#informacion">Información</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#iniciar-sesion">Iniciar Sesión</a>
+        </div>
+    </nav>
+    
 
+    <!-- Banner -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 >Bienvenido a nuestra página</h1>
+            <p>Explora nuestros productos y descubre lo mejor de nuestra OJC. Cuidado personal.</p>
+            <a href="#saber-mas" class="btn">Saber más</a>
+        </div>
     </header>
 
-    <main>
-        <div class="main-container">
-            <div class="welcome-container">
-                <h1>Bienvenido a Nuestra Página</h1>
-                <p>Explora nuestros productos y descubre lo mejor en belleza y cuidado personal.</p>
-                <button class="welcome-button">Saber Más</button>
-            </div>
-        </div>
-    </main>
 
-
-
-    
-    <footer>
-        <div class="footer-container">
-            <p>© 2024 Tu Empresa. Todos los derechos reservados.</p>
-            <div class="social-icons">
-                <a href="https://facebook.com" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.google.com/maps" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i> <!-- Ícono de mapas -->
-                </a>
-            </div>
-        </div>
-    </footer>
-
-
+    <script src="{% static 'js/components/navbar.js' %}"></script>
 
 
 
