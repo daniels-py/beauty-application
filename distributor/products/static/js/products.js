@@ -3,7 +3,7 @@ alert("ejemplo para saber si funciona el js");
 $(document).ready(function() {
     // Hacer la petición AJAX al API
     $.ajax({
-        url: 'categorias-lista',  // Endpoint de tu API
+        url: 'http://127.0.0.1:8000/api/products/categorias/',  // Endpoint de tu API
         method: 'GET',
         success: function(data) {
             // Iterar sobre los datos y construir las filas de la tabla
