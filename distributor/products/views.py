@@ -9,7 +9,7 @@ from django.views import View
 
 class list_categoryView(View):
     def get(self, request):
-        return render(request, 'products/lista_productos.html')
+        return render(request, 'categorias/listar_categorias.html')
 
 
 
