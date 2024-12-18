@@ -3,7 +3,7 @@ from django.views import View
 
 
 def Home(request):
-    return render(request, "store/home.html")
+    return render(request, "store/pages/home.html")
 
 
 class RegisterUserView(View):
