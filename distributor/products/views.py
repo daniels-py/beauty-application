@@ -9,16 +9,13 @@ from django.views import View
 
 class list_categoryView(View):
     def get(self, request):
-        return render(request, 'categorias/listar_categorias.html')
+        return render(request, 'products/categorias/listar_categorias.html')
+
+class list_brandsView(View):
+    def get(self, request):
+        return render(request, 'products/marcas/listar_marcas.html')
 
 
-
-class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
-    permission_classes = [IsAdminUserRole]  # Aplica el permiso predeterminado por ahora cuando el usuario se loguee toca tenerlo en cuenta para 
-                                            # que no tenga errores en caso de estar testeando 
-                                            
 class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
@@ -26,7 +23,7 @@ class CategoriaViewSet(viewsets.ModelViewSet):
 class MarcaViewSet(viewsets.ModelViewSet):
     queryset = Marca.objects.all()
     serializer_class = MarcaSerializer
-    permission_classes = [IsAdminUserRole]
+
 
 class PresentacionViewSet(viewsets.ModelViewSet):
     queryset = Presentacion.objects.all()
@@ -37,3 +34,10 @@ class CartaColorViewSet(viewsets.ModelViewSet):
     queryset = CartaColor.objects.all()
     serializer_class = CartaColorSerializer
     permission_classes = [IsAdminUserRole]
+
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    permission_classes = [IsAdminUserRole]  # Aplica el permiso predeterminado por ahora cuando el usuario se loguee toca tenerlo en cuenta para 
+                                            # que no tenga errores en caso de estar testeando 
+                                        

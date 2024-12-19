@@ -5,11 +5,13 @@ from .views import *
 
 router = DefaultRouter()
 router.register(r'productos', ProductoViewSet)
+router.register(r'marcas',  MarcaViewSet)
 router.register(r'categorias', CategoriaViewSet)
 router.register(r'presentaciones', PresentacionViewSet)
 router.register(r'cartacolor', CartaColorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),  # Incluye las URLs generadas por el router
-    path('listar-categorias/', list_categoryView.as_view(), name='categorias-lista')
+    path('listar-categorias/', list_categoryView.as_view(), name='categorias-lista'),
+    path('listar-marcas/',list_brandsView.as_view(), name='marcas-lista' )
 ]
