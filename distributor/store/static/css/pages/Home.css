@@ -134,7 +134,7 @@ nav {
         display: none; /* Ocultar el menú inicialmente */
         flex-direction: column;
         gap: 1rem;
-        background-color: #ffffff9f;
+        background-color: #ffffff;
         position: absolute;
         top: 100%; /* Justo debajo del navbar */
         left: 0;

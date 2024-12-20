@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de marcas</title>
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -14,14 +15,15 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Descripccion hola</th>
                 <th>Acciones</th>
             </tr>
         </thead>
-        <tbody id="marcas-tbody">
+        <tbody id="productos-tbody">
             <!-- Aquí se agregarán los productos dinámicamente -->
         </tbody>
     </table>
-    <script src="{% static 'js/marcas/list.js' %}"></script>
+    <script src="{% static 'js/admin/categorias/list.js' %}"></script>
 </body>
 </html>

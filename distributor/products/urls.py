@@ -13,5 +13,6 @@ router.register(r'cartacolor', CartaColorViewSet)
 urlpatterns = [
     path('', include(router.urls)),  # Incluye las URLs generadas por el router
     path('listar-categorias/', list_categoryView.as_view(), name='categorias-lista'),
-    path('listar-marcas/',list_brandsView.as_view(), name='marcas-lista' )
+    path('listar-marcas/',list_brandsView.as_view(), name='marcas-lista' ),
+    path('listar-presentaciones/', list_presentacion.as_view(), name='presentaciones-listar')
 ]

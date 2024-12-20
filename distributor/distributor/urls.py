@@ -26,6 +26,8 @@ urlpatterns = [
     path('api/users/', include('users.urls')),  # Rutas de la app 'users'
     path('api/inventory/', include('inventory.urls')),  # Rutas de la app 'inventory'
 
+    # ajustes de urls de usuario dependiendo su roll
+
     # Rutas estándar (no API) para la app 'store'
     path('store/', include('store.urls')),  # Rutas de la app 'store' (registro de usuarios comunes, etc.)
 
