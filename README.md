@@ -16,17 +16,6 @@ Un sistema de gestión de inventarios basado en Django, diseñado específicamen
 git clone https://github.com/daniels-py/beauty-application
 cd Distributor
 
-
-
-#### Sigue estos pasos para configurar el proyecto en tu entorno local:
-
-#### 1. Clona el repositorio:
-
-```bash
-  git clone <https://github.com/daniels-py/beauty-application> 
-
-  cd Distributor
-
 ```
 
 #### 2. Crea un entorno virtual:
