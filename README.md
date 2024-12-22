@@ -14,7 +14,6 @@ Un sistema de gestión de inventarios basado en Django, diseñado específicamen
 
 ```bash
 git clone https://github.com/daniels-py/beauty-application
-cd Distributor
 
 ```
 
