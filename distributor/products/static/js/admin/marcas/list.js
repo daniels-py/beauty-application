@@ -1,10 +1,10 @@
 // Ejecutar el código cuando el DOM esté completamente cargado
 $(document).ready(function() {
-    alert("ejemplo para saber si funciona el js"); // Alerta para confirmar que el JS está funcionando
+    alert("ejemplo para saber si funciona el js en marcas que no me lista"); // Alerta para confirmar que el JS está funcionando
 
     // Hacer una petición AJAX al API para obtener las categorías
     $.ajax({
-        url: 'http://127.0.0.1:8000/api/products/marcas/',  // URL del endpoint del API
+        url: 'http://127.0.0.1:8000/api/products/admin/marcas/',  // URL del endpoint del API
         method: 'GET',  // Tipo de solicitud HTTP: GET para obtener datos
         success: function(data) {
             // Si la solicitud es exitosa, construir la tabla con los datos obtenidos

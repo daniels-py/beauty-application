@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     // Hacer una petición AJAX al API para obtener las categorías
     $.ajax({
-        url: 'http://127.0.0.1:8000/api/products/categorias/',  // URL del endpoint del API
+        url: 'http://127.0.0.1:8000/api/products/admin/categorias/',  // URL del endpoint del API
         method: 'GET',  // Tipo de solicitud HTTP: GET para obtener datos
         success: function(data) {
             // Si la solicitud es exitosa, construir la tabla con los datos obtenidos
