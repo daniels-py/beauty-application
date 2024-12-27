@@ -42,15 +42,18 @@ INSTALLED_APPS = [
     'products',
     'inventory',
     'store',
-    #complementos
+    #complementos y frameworks
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
     'django_browser_reload',# nombre de aplicacion para recargar el serviro web
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware', #Añadir esto para habilitar cors con react
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -146,3 +149,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Configuración de CORS 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Dirección del frontend React
+]
+

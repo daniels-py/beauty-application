@@ -19,6 +19,7 @@ $(document).ready(function() {
                         <td>${categoria.id}</td>  <!-- Mostrar el ID de la categoría -->
                         <td>${categoria.nombre}</td>  <!-- Mostrar el nombre de la categoría -->
                         <td>${categoria.descripcion}</td>  <!-- Mostrar la descripción de la categoría -->
+                        <td>${categoria.permite_color}</td>  <!-- Mostrar la descripción de la categoría -->
                         <!-- Agregar botones de acción para actualizar y eliminar -->
                         <td>
                             <button class="btn-actualizar" data-id="${categoria.id}">Actualizar</button>
