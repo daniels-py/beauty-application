@@ -1,6 +1,6 @@
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', include('products.urls_admin')),  # Rutas para administradores
-    path('empleado/', include('products.urls_empleado')),  # Rutas para empleados
+    path('api/admin/', include('products.urls_admin')),  # Prefijo para admin
+    path('api/empleado/', include('products.urls_employee')),  # Prefijo para empleado
 ]

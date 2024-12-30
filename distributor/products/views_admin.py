@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .models import *
-from .serializers import  CategoriaSerializer, MarcaSerializer, PresentacionSerializer, CartaColorSerializer, ProductoSerializer
+from .serializers_admin import *
 from .permissions import IsAdminUserRole  # Importa el permiso personalizado para el tipo de usuario que yo quiera
 from django.shortcuts import render
 from django.views import View
@@ -21,26 +21,26 @@ class list_presentacion(View):
 
 
 
-class CategoriaViewSet(viewsets.ModelViewSet):
+class CategoriaViewSetAdmin(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
-    serializer_class = CategoriaSerializer
+    serializer_class = CategoriaAdminSerializer
 
-class MarcaViewSet(viewsets.ModelViewSet):
+class MarcaViewSetAdmin(viewsets.ModelViewSet):
     queryset = Marca.objects.all()
-    serializer_class = MarcaSerializer
+    serializer_class = MarcaAdminSerializer
 
-class PresentacionViewSet(viewsets.ModelViewSet):
+class PresentacionViewSetAdmin(viewsets.ModelViewSet):
     queryset = Presentacion.objects.all()
-    serializer_class = PresentacionSerializer
+    serializer_class = PresentacionAdminSerializer
 
-class CartaColorViewSet(viewsets.ModelViewSet):
+class CartaColorViewSetAdmin(viewsets.ModelViewSet):
     queryset = CartaColor.objects.all()
-    serializer_class = CartaColorSerializer
+    serializer_class = CartaColorAdminSerializer
     #permission_classes = [IsAdminUserRole]
 
-class ProductoViewSet(viewsets.ModelViewSet):
+class ProductoViewSetAdmin(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
+    serializer_class = PresentacionAdminSerializer
     #permission_classes = [IsAdminUserRole]  # Aplica el permiso predeterminado por ahora cuando el usuario se loguee toca tenerlo en cuenta para 
                                             # que no tenga errores en caso de estar testeando 
                                         

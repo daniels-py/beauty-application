@@ -1,17 +1,17 @@
-from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import *
+from .views_admin import (
+    CategoriaViewSetAdmin,
+    MarcaViewSetAdmin,
+    PresentacionViewSetAdmin,
+    CartaColorViewSetAdmin,
+    ProductoViewSetAdmin,
+)
 
-router = DefaultRouter()
-router.register(r'productos', ProductoViewSet)
-router.register(r'marcas', MarcaViewSet)
-router.register(r'categorias', CategoriaViewSet)
-router.register(r'presentaciones', PresentacionViewSet)
-router.register(r'cartacolor', CartaColorViewSet)
+router_admin = DefaultRouter()
+router_admin.register(r'categorias', CategoriaViewSetAdmin, basename='admin-categorias')
+router_admin.register(r'marcas', MarcaViewSetAdmin, basename='admin-marcas')
+router_admin.register(r'presentaciones', PresentacionViewSetAdmin, basename='admin-presentaciones')
+router_admin.register(r'cartas-colores', CartaColorViewSetAdmin, basename='admin-cartas-colores')
+router_admin.register(r'productos', ProductoViewSetAdmin, basename='admin-productos')
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path('listar-categorias/', list_categoryView.as_view(), name='categorias-lista'),
-    path('listar-marcas/', list_brandsView.as_view(), name='marcas-lista'),
-    path('listar-presentaciones/', list_presentacion.as_view(), name='presentaciones-listar'),
-]
+urlpatterns = router_admin.urls
