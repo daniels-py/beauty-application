@@ -1,8 +1,9 @@
 from django.db import models
 from products.models import Producto  # Asegúrate de importar correctamente el modelo Producto
 
+
 class Inventario(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='inventario')
+    producto = models.OneToOneField(Producto, on_delete=models.CASCADE, related_name='inventario')
     unidades = models.PositiveIntegerField(default=0, verbose_name='Unidades')
 
     def __str__(self):
@@ -11,4 +12,3 @@ class Inventario(models.Model):
     class Meta:
         verbose_name = 'Inventario'
         verbose_name_plural = 'Inventarios'
-        unique_together = ('producto',)

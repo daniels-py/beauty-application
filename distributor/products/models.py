@@ -2,9 +2,9 @@ from django.db import models
 from django.forms import ValidationError
 
 # Create your models here.
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=255, unique=True, verbose_name='Nombre de la Categoría')
-    descripcion = models.TextField(verbose_name='Descripción de la Categoría', blank=True)
     permite_color = models.BooleanField(default=False, verbose_name='¿Permite Carta de Colores?')
 
     def __str__(self):
@@ -26,9 +26,9 @@ class Marca(models.Model):
         verbose_name_plural = 'Marcas'
 
 
+
 class Presentacion(models.Model):
     nombre = models.CharField(max_length=255, verbose_name='Nombre de la Presentación')
-    descripcion = models.TextField(verbose_name='Descripción de la Presentación', blank=True)
 
     def __str__(self):
         return self.nombre
@@ -38,11 +38,11 @@ class Presentacion(models.Model):
         verbose_name_plural = 'Presentaciones'
 
 
+
 class CartaColor(models.Model):
     codigo_color = models.CharField(max_length=50, verbose_name='Código de Color')
     nombre_color = models.CharField(max_length=255, verbose_name='Nombre del Color')
     hexadecimal = models.CharField(max_length=7, verbose_name='Código Hexadecimal', blank=True)
-    descripcion = models.TextField(verbose_name='Descripción del Color', blank=True)
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE, related_name='cartas_colores')
 
     class Meta:
@@ -59,9 +59,8 @@ class Producto(models.Model):
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE, related_name='productos')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='productos')
     presentacion = models.ForeignKey(Presentacion, on_delete=models.CASCADE, related_name='productos')
-    descripcion = models.TextField(verbose_name='Descripción del Producto', default="Descripción no disponible")
     carta_color = models.ForeignKey(CartaColor, on_delete=models.SET_NULL, null=True, blank=True, related_name='productos', verbose_name='Carta de Color')
-    precio = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='Precio')  # Valor por defecto aquí
+    precio = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='Precio')
 
     def __str__(self):
         return f'{self.nombre} - {self.marca.nombre}'
@@ -74,3 +73,4 @@ class Producto(models.Model):
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
         unique_together = ('nombre', 'marca')
+

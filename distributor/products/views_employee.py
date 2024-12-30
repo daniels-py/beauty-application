@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views import View
 
 
-class ProductoEmpleadoViewSet(viewsets.ReadOnlyModelViewSet):
+class ProductoEmpleadoViewSet(viewsets.ReadOnlyModelViewSet):# solo lo habilita para poder ver
     queryset = Producto.objects.all()
     serializer_class = ProductoEmpleadoSerializer
 

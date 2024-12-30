@@ -40,7 +40,7 @@ class CartaColorViewSetAdmin(viewsets.ModelViewSet):
 
 class ProductoViewSetAdmin(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
-    serializer_class = PresentacionAdminSerializer
+    serializer_class = ProductoAdminSerializer
     #permission_classes = [IsAdminUserRole]  # Aplica el permiso predeterminado por ahora cuando el usuario se loguee toca tenerlo en cuenta para 
                                             # que no tenga errores en caso de estar testeando 
                                         

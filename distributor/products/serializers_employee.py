@@ -25,8 +25,8 @@ class ProductoEmpleadoSerializer(serializers.ModelSerializer):
     categoria = CategoriaEmpleadoSerializer()
     marca = MarcaEmpleadoSerializer()
     presentacion = PresentacionEmpleadoSerializer()
-    carta_color = CartaColorEmpleadoSerializer(many=True)  # Relación múltiple
+    carta_color = CartaColorEmpleadoSerializer() 
 
     class Meta:
         model = Producto
-        fields = ['id', 'nombre', 'marca', 'categoria', 'presentacion', 'precio']
+        fields = ['id', 'nombre', 'marca', 'categoria', 'presentacion', 'precio' , 'carta_color',]
