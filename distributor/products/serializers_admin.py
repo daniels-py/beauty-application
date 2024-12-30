@@ -21,6 +21,8 @@ class CartaColorAdminSerializer(serializers.ModelSerializer):
         model = CartaColor
         fields = ['id', 'codigo_color', 'nombre_color', 'hexadecimal', 'marca']
 
+
+
 class ProductoAdminSerializer(serializers.ModelSerializer):
     categoria = CategoriaAdminSerializer()
     marca = MarcaAdminSerializer()
