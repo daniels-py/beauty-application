@@ -61,6 +61,8 @@ class Producto(models.Model):
     presentacion = models.ForeignKey(Presentacion, on_delete=models.CASCADE, related_name='productos')
     carta_color = models.ForeignKey(CartaColor, on_delete=models.SET_NULL, null=True, blank=True, related_name='productos', verbose_name='Carta de Color')
     precio = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='Precio')
+    # Agregamos el campo codigo_barras
+    codigo_barras = models.CharField(max_length=100, unique=True, null=True, blank=True, default="SIN_CODIGO", verbose_name="Código de Barras")
 
     def __str__(self):
         return f'{self.nombre} - {self.marca.nombre}'
