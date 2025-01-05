@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register(r'ventas', VentaViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', include(router.urls)),  # Incluye todas las rutas registradas en el router
 ]

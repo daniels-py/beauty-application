@@ -5,3 +5,5 @@ class VentaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Venta
         fields = ['id', 'fecha', 'producto', 'cantidad', 'total']
+
+
