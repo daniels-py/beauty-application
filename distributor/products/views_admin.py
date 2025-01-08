@@ -7,18 +7,13 @@ from django.views import View
 
 ## vistas para redireccionar
 
-class list_categoryView(View):
+class panel_de_control(View):
     def get(self, request):
-        return render(request, 'products/admin/categorias/listar_categorias.html')
+        return render(request, 'products/admin/dashboard.html')
 
-class list_brandsView(View):
-    def get(self, request):
-        return render(request, 'products/admin/marcas/listar_marcas.html')
 
-class list_presentacion(View):
-    def get(self, request):
-        return render(request, 'Products/presentacion/listar_presentacion.html')
-
+def panel(request):
+    return render(request, 'products/admin/dashboard.html')
 
 
 class CategoriaViewSetAdmin(viewsets.ModelViewSet):

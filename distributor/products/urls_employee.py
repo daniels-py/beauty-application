@@ -15,3 +15,4 @@ router_employee.register(r'cartas-colores', CartaColorEmpleadoViewSet, basename=
 router_employee.register(r'productos', ProductoEmpleadoViewSet, basename='employee-productos')
 
 urlpatterns = router_employee.urls
+
