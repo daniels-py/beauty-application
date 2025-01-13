@@ -4,6 +4,8 @@ from .serializers_admin import *
 from .permissions import IsAdminUserRole  # Importa el permiso personalizado para el tipo de usuario que yo quiera
 from django.shortcuts import render
 from django.views import View
+from .models import Producto
+
 
 ## vistas para redireccionar
 
@@ -13,7 +15,8 @@ class panel_de_control(View):
 
 
 def panel(request):
-    return render(request, 'products/admin/dashboard.html')
+    productos = Producto.objects.all()
+    return render(request, 'products/admin/dashboard.html', {'productos': productos})
 
 
 class CategoriaViewSetAdmin(viewsets.ModelViewSet):

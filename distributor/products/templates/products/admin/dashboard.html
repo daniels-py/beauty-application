@@ -5,9 +5,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Document</title>
 </head>
 <body>
     <h1>hola panel de admin</h1>
+
+
+    <p>prueba profecional con consumo de api java script v1</p>
+    <table id="productos-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Codigo de barras</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--en este espacio vamos a hacer que nuestro js liste los datos de forma d-->
+        </tbody>
+
+    </table>
+
+    <p>pruebas de funcionabilidad volumen version 1 en aprendizaje</p>
+    <h1>Lista de Productos</h1>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; padding: 8px;">ID</th>
+                <th style="border: 1px solid black; padding: 8px;">Nombre</th>
+                <th style="border: 1px solid black; padding: 8px;">Marca</th>
+                <th style="border: 1px solid black; padding: 8px;">Categoría</th>
+                <th style="border: 1px solid black; padding: 8px;">Precio</th>
+                <th style="border: 1px solid black; padding: 8px;">Código de Barras</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{{ producto.id }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ producto.nombre }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ producto.marca.nombre }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ producto.categoria.nombre }}</td>
+                <td style="border: 1px solid black; padding: 8px;">${{ producto.precio }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ producto.codigo_barras }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" style="border: 1px solid black; padding: 8px; text-align: center;">No hay productos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Vinculamos el archivo JavaScript -->
+    <script src="{% static 'admin/js/api/list_products.js' %}"></script>
+
 </body>
 </html>
