@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'admin/css/modal.css' %}">
 
     <title>Document</title>
 </head>
@@ -23,6 +24,7 @@
                 <th>Categoria</th>
                 <th>Precio</th>
                 <th>Codigo de barras</th>
+                <th>Acciones</th>
             </tr>
         </thead>
 
@@ -63,8 +65,32 @@
         </tbody>
     </table>
 
+
+     <!-- Modal para actualizar producto -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Actualizar Producto</h3>
+            <form id="update-form">
+                <input type="hidden" id="update-id">
+                <label for="update-nombre">Nombre:</label>
+                <input type="text" id="update-nombre" required>
+                <label for="update-precio">Precio:</label>
+                <input type="number" id="update-precio" step="0.01" required>
+                <label for="update-marca">ID Marca:</label>
+                <input type="number" id="update-marca" required>
+                <label for="update-categoria">ID Categoría:</label>
+                <input type="number" id="update-categoria" required>
+                <button type="submit" class="btn-submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+
+
+
     <!-- Vinculamos el archivo JavaScript -->
     <script src="{% static 'admin/js/api/list_products.js' %}"></script>
+    <script src="{% static 'admin/js/api/category.js' %}"></script>
 
 </body>
 </html>
