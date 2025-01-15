@@ -1,0 +1,99 @@
+/*===== HEADER =====*/
+.header-container {
+  width: 100%; /* Ocupa todo el ancho */
+  height: var(--header-height); /* Altura definida en variables */
+  position: fixed; /* Siempre visible */
+  top: 0; /* Anclado en la parte superior */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaciado entre elementos */
+  padding: 0 1rem;
+  background-color: var(--white-color); /* Fondo blanco */
+  z-index: var(--z-fixed); /* Se coloca encima de otros elementos */
+  transition: .5s; /* Transición suave para cambios de estilo */
+}
+
+/* Botón de toggle para mostrar el menú */
+.header__toggle {
+  color: var(--first-color); /* Color principal */
+  font-size: 1.5rem; /* Tamaño del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Imagen del usuario en el header */
+.header__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff6b00;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header__img.active {
+  box-shadow: 0 0 10px 5px rgba(243, 144, 87, 0.5); /* Sombra alrededor */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  right: 20px; /* Ajusta este valor según sea necesario */
+  background-color: #2d2f33;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.dropdown-menu.active {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #3e4045;
+}
+
+.dropdown-item i {
+  font-size: 16px;
+}
+
+.header__img img {
+  width: 40px; /* Tamaño de la imagen */
+}
+
+/* ===== MEDIA QUERIES===== */
+@media screen and (min-width: 768px) {
+  .header-container {
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header__img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__img img {
+    width: 45px;
+  }
+}

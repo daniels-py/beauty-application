@@ -33,5 +33,5 @@ class ProductoAdminSerializer(serializers.ModelSerializer):
         model = Producto
         fields = [
             'id', 'nombre', 'marca', 'categoria', 'presentacion',
-            'carta_color', 'precio'
+            'carta_color', 'precio','codigo_barras'
         ]

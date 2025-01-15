@@ -19,7 +19,7 @@ class PresentacionEmpleadoSerializer(serializers.ModelSerializer):
 class CartaColorEmpleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = CartaColor
-        fields = ['id', 'codigo_color', 'nombre_color', 'hexadecimal']  # Eliminamos 'descripcion' y 'marca'
+        fields = ['id', 'cdigo_coloro', 'nombre_color', 'hexadecimal']  # Eliminamos 'descripcion' y 'marca'
 
 class ProductoEmpleadoSerializer(serializers.ModelSerializer):
     categoria = CategoriaEmpleadoSerializer()
@@ -29,4 +29,4 @@ class ProductoEmpleadoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Producto
-        fields = ['id', 'nombre', 'marca', 'categoria', 'presentacion', 'precio' , 'carta_color',]
+        fields = ['id', 'nombre', 'marca', 'categoria', 'presentacion', 'precio' , 'carta_color','codigo_color']

@@ -15,5 +15,6 @@ urlpatterns = [
 
     # Rutas específicas para redirigir a las plantillas HTML
      path('Panel/', panel, name="Home" ),
+     path('Base/', plantilla, name="Base" ),
 
 ]

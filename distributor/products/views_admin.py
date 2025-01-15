@@ -12,6 +12,10 @@ from .models import Producto
 class panel_de_control(View):
     def get(self, request):
         return render(request, 'products/admin/dashboard.html')
+    
+
+def plantilla(request):
+        return render(request, 'products/admin/base.html')
 
 
 def panel(request):

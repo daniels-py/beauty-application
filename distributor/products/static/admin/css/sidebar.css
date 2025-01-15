@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  /* Altura del header y ancho del navbar */
+  --header-height: 3rem;
+  --nav-width: 68px;
+
+  /* Colores principales */
+  --first-color: #2d2f33;
+  --first-color-light: #f8f8f8;
+  --white-color: #f2f1f7;
+
+  /* Tipografía */
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+
+  /* Z-index para superposición */
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after {
+  box-sizing: border-box;
+}
+
+/* Configuración general del body */
+body {
+  position: relative;
+  margin: var(--header-height) 0 0 0; /* Espacio para el header */
+  padding: 0 1rem; /* Espaciado interno del contenido */
+  font-family: var(--body-font); /* Fuente definida en variables */
+  font-size: var(--normal-font-size); /* Tamaño de fuente */
+  transition: .5s; /* Transición para efectos suaves */
+}
+
+/* Enlaces sin subrayado */
+a {
+  text-decoration: none;
+}
+/*===== NAV =====*/
+.sidebar-container {
+  position: fixed; /* Anclado en su posición */
+  top: 0;
+  left: -30%; /* Oculto fuera de la pantalla */
+  width: var(--nav-width); /* Ancho definido en variables */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: var(--first-color); /* Fondo azul */
+  padding: .5rem 1rem 0 0;
+  transition: .5s; /* Transición suave */
+  z-index: var(--z-fixed); /* Encima de otros elementos */
+}
+
+/* Contenedor principal del menú */
+.nav {
+  height: 100%; /* Ocupa toda la altura */
+  display: flex;
+  flex-direction: column; /* Organización vertical */
+  justify-content: space-between; /* Distribución equitativa */
+  overflow: hidden; /* Oculta el contenido desbordado */
+}
+
+/* Estilo para el logo y enlaces del menú */
+.nav__logo, .nav__link {
+  display: grid; /* Organización en filas y columnas */
+  grid-template-columns: max-content max-content; /* Tamaño máximo según el contenido */
+  align-items: center; /* Alineación central */
+  column-gap: 1rem; /* Espaciado entre íconos y texto */
+  padding: .5rem 0 .5rem 1.5rem; /* Espaciado interno */
+}
+
+.nav__logo {
+  margin-bottom: 2rem;
+}
+
+.nav__logo-icon {
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.nav__logo-name {
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav__link {
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.nav__link:hover {
+  color: var(--white-color);
+}
+
+.nav__icon {
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show {
+  left: 0;
+}
+
+/*Add padding body movil*/
+.body-pd {
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active {
+  color: var(--white-color);
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+/* ===== MEDIA QUERIES===== */
+@media screen and (min-width: 768px) {
+  .sidebar-container {
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+
+  /*Show navbar desktop*/
+  .show {
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  /*Add padding body desktop*/
+  .body-pd {
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}

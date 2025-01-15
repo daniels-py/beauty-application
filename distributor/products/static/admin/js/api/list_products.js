@@ -15,6 +15,8 @@ $(document).ready(function () {
                         <td>${producto.nombre}</td>
                         <td>${producto.marca.nombre}</td>
                         <td>${producto.categoria.nombre}</td>
+                        <td>${producto.presentacion.nombre}</td>
+                        <td>${producto.carta_color ? producto.carta_color.nombre_color : 'No aplica'}</td>
                         <td>${producto.precio}</td>
                         <td>${producto.codigo_barras}</td>
                         <td>
@@ -51,11 +53,17 @@ function eliminarProducto(id) {
             type: 'DELETE',
             success: function () {
                 alert('Producto eliminado con éxito');
-                location.reload(); // Recarga la página
+                location.reload(); // Recarga la página para actualizar la lista
             },
             error: function () {
                 alert('Error al eliminar el producto');
             }
         });
     }
+}
+
+// Función para actualizar producto (debes agregar tu lógica aquí)
+function actualizarProducto(id) {
+    alert("Función para actualizar producto con ID: " + id);
+    // Aquí puedes agregar el código para redirigir a una página de actualización o mostrar un formulario.
 }
