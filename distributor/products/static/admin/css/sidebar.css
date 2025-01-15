@@ -8,8 +8,8 @@
 
   /* Colores principales */
   --first-color: #2d2f33;
-  --first-color-light: #f8f8f8;
-  --white-color: #f2f1f7;
+  --first-color-light: #d3cbcb;
+  --white-color: #f1f1f5;
 
   /* Tipografía */
   --body-font: 'Nunito', sans-serif;
@@ -91,7 +91,7 @@ a {
 }
 
 .nav__link:hover {
-  color: var(--white-color);
+  background-color: #59595a;
 }
 
 .nav__icon {

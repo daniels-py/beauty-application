@@ -9,14 +9,14 @@
   align-items: center;
   justify-content: space-between; /* Espaciado entre elementos */
   padding: 0 1rem;
-  background-color: var(--white-color); /* Fondo blanco */
+  background-color: var(--first-color); /* Fondo blanco */
   z-index: var(--z-fixed); /* Se coloca encima de otros elementos */
   transition: .5s; /* Transición suave para cambios de estilo */
 }
 
 /* Botón de toggle para mostrar el menú */
 .header__toggle {
-  color: var(--first-color); /* Color principal */
+  color: white; /* Color principal */
   font-size: 1.5rem; /* Tamaño del ícono */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
@@ -37,7 +37,7 @@
 }
 
 .header__img.active {
-  box-shadow: 0 0 10px 5px rgba(243, 144, 87, 0.5); /* Sombra alrededor */
+  box-shadow: 0 0 10px 5px rgba(197, 111, 236, 0.5); /* Sombra alrededor */
 }
 
 .dropdown-menu {
@@ -52,6 +52,7 @@
   display: none;
   flex-direction: column;
   padding: 10px 0;
+  border: 2px solid #4b4b4d;
 }
 
 .dropdown-menu.active {
