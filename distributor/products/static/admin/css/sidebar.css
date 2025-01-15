@@ -1,3 +1,4 @@
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 /*===== VARIABLES CSS =====*/
@@ -8,8 +9,8 @@
 
   /* Colores principales */
   --first-color: #2d2f33;
-  --first-color-light: #d3cbcb;
-  --white-color: #f1f1f5;
+  --first-color-light: #f8f8f8;
+  --white-color: #f2f1f7;
 
   /* Tipografía */
   --body-font: 'Nunito', sans-serif;
@@ -27,25 +28,127 @@
 /* Configuración general del body */
 body {
   position: relative;
-  margin: var(--header-height) 0 0 0; /* Espacio para el header */
-  padding: 0 1rem; /* Espaciado interno del contenido */
+  margin: 0; /* Espacio para el header */
+  padding: 0; /* Espaciado interno del contenido */
   font-family: var(--body-font); /* Fuente definida en variables */
   font-size: var(--normal-font-size); /* Tamaño de fuente */
   transition: .5s; /* Transición para efectos suaves */
+  background-color: #f8f8f8;
+  color: #333;
 }
 
 /* Enlaces sin subrayado */
 a {
   text-decoration: none;
 }
+
+/*===== HEADER =====*/
+.header {
+  width: 100%; /* Ocupa todo el ancho */
+  height: var(--header-height); /* Altura definida en variables */
+  position: fixed; /* Siempre visible */
+  top: 0; /* Anclado en la parte superior */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaciado entre elementos */
+  padding: 0 1rem;
+  background-color: var(--first-color); /* Fondo blanco */
+  z-index: var(--z-fixed); /* Se coloca encima de otros elementos */
+  transition: .5s; /* Transición suave para cambios de estilo */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Botón de toggle para mostrar el menú */
+.header__toggle {
+  color: #f1e9e9; /* Color principal */
+  font-size: 1.5rem; /* Tamaño del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Imagen del usuario en el header  modificacion a mi justo*/
+.header__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff6b00;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+.header__img.active {
+  box-shadow: 0 0 10px 5px rgba(186, 87, 243, 0.5); /* Sombra alrededor */
+}
+
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  right: 20px; /* Ajusta este valor según sea necesario */
+  background-color: #2d2f33;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  border: 2px solid #4b4b4d;
+}
+
+
+.dropdown-menu.active {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+
+.dropdown-item:hover {
+  background-color: #3e4045;
+}
+
+.dropdown-item i {
+  font-size: 16px;
+}
+
+
+/*termina aqui*/
+
+.header__img img {
+  width: 40px; /* Tamaño de la imagen */
+}
+
+
+
+
+
+
 /*===== NAV =====*/
-.sidebar-container {
+.l-navbar {
   position: fixed; /* Anclado en su posición */
   top: 0;
   left: -30%; /* Oculto fuera de la pantalla */
   width: var(--nav-width); /* Ancho definido en variables */
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-color: var(--first-color); /* Fondo azul */
+  background-color: #2d2f33; /* Fondo azul */
   padding: .5rem 1rem 0 0;
   transition: .5s; /* Transición suave */
   z-index: var(--z-fixed); /* Encima de otros elementos */
@@ -60,6 +163,9 @@ a {
   overflow: hidden; /* Oculta el contenido desbordado */
 }
 
+
+
+
 /* Estilo para el logo y enlaces del menú */
 .nav__logo, .nav__link {
   display: grid; /* Organización en filas y columnas */
@@ -69,51 +175,53 @@ a {
   padding: .5rem 0 .5rem 1.5rem; /* Espaciado interno */
 }
 
-.nav__logo {
+.nav__logo{
   margin-bottom: 2rem;
 }
 
-.nav__logo-icon {
+.nav__logo-icon{
   font-size: 1.25rem;
   color: var(--white-color);
 }
 
-.nav__logo-name {
-  color: var(--white-color);
+.nav__logo-name{
+  color: #fff;
   font-weight: 700;
 }
 
-.nav__link {
+.nav__link{
   position: relative;
   color: var(--first-color-light);
   margin-bottom: 1.5rem;
   transition: .3s;
+  color: #fff;
 }
 
-.nav__link:hover {
-  background-color: #59595a;
+.nav__link:hover{
+  color: var(--white-color);
+  background-color: #444;
 }
 
-.nav__icon {
+.nav__icon{
   font-size: 1.25rem;
 }
 
 /*Show navbar movil*/
-.show {
+.show{
   left: 0;
 }
 
 /*Add padding body movil*/
-.body-pd {
+.body-pd{
   padding-left: calc(var(--nav-width) + 1rem);
 }
 
 /*Active links*/
-.active {
+.active{
   color: var(--white-color);
 }
 
-.active::before {
+.active::before{
   content: '';
   position: absolute;
   left: 0;
@@ -122,20 +230,58 @@ a {
   background-color: var(--white-color);
 }
 
-/* ===== MEDIA QUERIES===== */
-@media screen and (min-width: 768px) {
-  .sidebar-container {
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+    
+  .header__img{
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .header__img img{
+    width: 45px;
+  }
+
+  .l-navbar{
     left: 0;
     padding: 1rem 1rem 0 0;
   }
-
+  
   /*Show navbar desktop*/
-  .show {
+  .show{
     width: calc(var(--nav-width) + 156px);
   }
 
   /*Add padding body desktop*/
-  .body-pd {
+  .body-pd{
     padding-left: calc(var(--nav-width) + 188px);
   }
+}
+
+/* Nuevo contenedor y sus elementos */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -5,95 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="{% static 'admin/css/modal.css' %}">
-
     <title>Document</title>
 </head>
 <body>
-    <h1>hola panel de admin</h1>
+    {% include 'Products/admin/base.html'%}
 
-     <h1>Productos</h1>
-    <p>Listado de productos desde la API</p>
     
-    <table id="productos-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Marca</th>
-                <th>Categoria</th>
-                <th>Presentación</th>
-                <th>Color</th>
-                <th>Precio</th>
-                <th>Código de Barras</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Aquí se llenarán los datos con JavaScript -->
-        </tbody>
-    </table>
-
-
-</table>
-    <p>pruebas de funcionabilidad volumen version 1 en aprendizaje</p>
-    <h1>Lista de Productos</h1>
-    <table border="1" style="width: 100%; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th style="border: 1px solid black; padding: 8px;">ID</th>
-                <th style="border: 1px solid black; padding: 8px;">Nombre</th>
-                <th style="border: 1px solid black; padding: 8px;">Marca</th>
-                <th style="border: 1px solid black; padding: 8px;">Categoría</th>
-                <th style="border: 1px solid black; padding: 8px;">Precio</th>
-                <th style="border: 1px solid black; padding: 8px;">Código de Barras</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for producto in productos %}
-            <tr>
-                <td style="border: 1px solid black; padding: 8px;">{{ producto.id }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ producto.nombre }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ producto.marca.nombre }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ producto.categoria.nombre }}</td>
-                <td style="border: 1px solid black; padding: 8px;">${{ producto.precio }}</td>
-                <td style="border: 1px solid black; padding: 8px;">{{ producto.codigo_barras }}</td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="6" style="border: 1px solid black; padding: 8px; text-align: center;">No hay productos disponibles.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-
-     <!-- Modal para actualizar producto -->
-    <div id="update-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Actualizar Producto</h3>
-            <form id="update-form">
-                <input type="hidden" id="update-id">
-                <label for="update-nombre">Nombre:</label>
-                <input type="text" id="update-nombre" required>
-                <label for="update-precio">Precio:</label>
-                <input type="number" id="update-precio" step="0.01" required>
-                <label for="update-marca">ID Marca:</label>
-                <input type="number" id="update-marca" required>
-                <label for="update-categoria">ID Categoría:</label>
-                <input type="number" id="update-categoria" required>
-                <button type="submit" class="btn-submit">Actualizar</button>
-            </form>
-        </div>
-    </div>
-
-
-
-    <!-- Vinculamos el archivo JavaScript -->
-    <script src="{% static 'admin/js/api/list_products.js' %}"></script>
-    <script src="{% static 'admin/js/api/category.js' %}"></script>
-
+    <h1>hola mundo</h1>
 </body>
 </html>
