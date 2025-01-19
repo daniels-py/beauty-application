@@ -14,7 +14,11 @@ urlpatterns = [
     path('api/', include(router_admin.urls)),
 
     # Rutas específicas para redirigir a las plantillas HTML
-     path('Panel/', panel, name="Home" ),
-     path('Base/', plantilla, name="Base" ),
+    path('admin/panel-de-control/', PanelDeControl.as_view(), name='panel_de_control'),
+    path('admin/usuarios/', Usuarios.as_view(), name='usuarios'),  # Asegúrate de que esta línea esté presente
 
+    # Rutas para vistas basadas en funciones
+    path('admin/base/', plantilla_base, name='plantilla_base'),
+    path('admin/panel/', panel, name='panel'),
+    path('admin/pruebas/', pruebas, name='pruebas'),
 ]

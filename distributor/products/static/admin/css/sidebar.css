@@ -123,6 +123,8 @@ a {
 
 .dropdown-item:hover {
   background-color: #3e4045;
+  border:1px solid #e0e0e0;
+  border-radius: 5%;
 }
 
 .dropdown-item i {
@@ -200,6 +202,7 @@ a {
 .nav__link:hover{
   color: var(--white-color);
   background-color: #444;
+
 }
 
 .nav__icon{

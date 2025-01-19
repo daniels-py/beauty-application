@@ -1,0 +1,36 @@
+{% extends 'products/admin/base.html' %}
+{% load static %}
+{% load django_browser_reload %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Usuarios{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Lista de Usuarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <!-- Agrega más columnas según sea necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td> <!-- Asegúrate de que este campo exista en tu modelo -->
+                <td>{{ user.email }}</td>
+                <!-- Agrega más campos según sea necesario -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</body>
+</html>

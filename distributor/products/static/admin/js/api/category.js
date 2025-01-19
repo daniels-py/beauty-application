@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para cargar productos desde la API
     const loadProductos = async () => {
         try {
-            const response = await fetch('/productoss/');
+            const response = await fetch('/productos/');
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
