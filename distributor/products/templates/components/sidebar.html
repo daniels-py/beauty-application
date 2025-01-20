@@ -7,10 +7,10 @@
             <div class="profile-container">
                 <div class="n">D</div>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#" class="dropdown-item"><i class='bx bx-user nav__icon' ></i>Mi perfil</a>
-                    <a href="#" class="dropdown-item"> <i class='bx bx-grid-alt nav__icon' ></i> Configuración</a>
-                    <a href="#" class="dropdown-item"><i class='bx bx-bookmark nav__icon' ></i> Planes</a>
-                    <a href="#" class="dropdown-item"> <i class='bx bx-log-out nav__icon' ></i> Cerrar sesión</a>
+                    <a href="#" class="dropdown-item"><i class='bx bx-user nav__icon'></i>Mi perfil</a>
+                    <a href="#" class="dropdown-item"><i class='bx bx-cog'></i>Configuración</a>
+                    <a href="#" class="dropdown-item"><i class='bx bx-bookmark nav__icon'></i>Planes</a>
+                    <a href="#" class="dropdown-item"><i class='bx bx-log-out nav__icon'></i>Cerrar sesión</a>
                 </div>
             </div>
         </div>
@@ -24,19 +24,19 @@
                     <span class="nav__logo-name">Sistema</span>
                 </a>
                 <div class="nav__list">
-                    <a href="{% url 'panel_de_control' %}" class="nav__link {% if active_page == 'panel_de_control' %}active{% endif %}">
+                    <a href="{% url 'panel_de_control' %}" class="nav__link {% if active_page == 'panel_de_control' %}activee{% endif %}">
                         <i class='bx bx-grid-alt nav__icon'></i>
                         <span class="nav__name">Dashboard</span>
                     </a>
-                    <a href="{% url 'usuarios' %}" class="nav__link {% if active_page == 'usuarios' %}active{% endif %}">
+                    <a href="{% url 'usuarios' %}" class="nav__link {% if active_page == 'usuarios' %}activee{% endif %}">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Users</span>
                     </a>
-                    <a href="#" class="nav__link {% if active_page == 'productos' %}active{% endif %}">
+                    <a href="#" class="nav__link {% if active_page == 'productos' %}activee{% endif %}">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Productos</span>
                     </a>
-                    <a href="#" class="nav__link {% if active_page == 'categorias' %}active{% endif %}">
+                    <a href="#" class="nav__link {% if active_page == 'categorias' %}activee{% endif %}">
                         <i class='bx bx-bookmark nav__icon'></i>
                         <span class="nav__name">Categorias</span>
                     </a>

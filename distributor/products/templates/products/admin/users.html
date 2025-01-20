@@ -6,11 +6,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>{% block title %}Usuarios{% endblock %}</title>
 </head>
 <body>
     {% block content %}
-    <h1>Lista de Usuarios</h1>
+    <h1>Lista de usuarios con api</h1>
+    <p>Listado de productos desde la API</p>
+    
+    <table id="usuarios-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se llenarán los datos con JavaScript -->
+        </tbody>
+    </table>
+
     <table>
         <thead>
             <tr>
@@ -22,9 +40,9 @@
             </tr>
         </thead>
         <tbody>
-            <h1>prueba generica</h1>
+            <p>lista de usuarios generica</p>
             {% for user in users %}
-            <tr>
+            <tr></tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
@@ -35,5 +53,7 @@
         </tbody>
     </table>
     {% endblock %}
+    <!-- Incluye el archivo JavaScript -->
+    <script src="{% static 'admin/js/api/users.js' %}"></script>
 </body>
 </html>
