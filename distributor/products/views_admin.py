@@ -5,6 +5,7 @@ from .permissions import IsAdminUserRole  # Importa el permiso personalizado par
 from django.shortcuts import render
 from django.views import View
 from .models import Producto
+from users.models import CustomUser
 
 # Clase que maneja la vista del panel de control del administrador
 class PanelDeControl(View):
@@ -16,7 +17,8 @@ class PanelDeControl(View):
 # Clase que maneja la vista de usuarios
 class Usuarios(View):
     def get(self, request):
-        context = {'active_page': 'usuarios', 'page_title': 'Usuarios'}
+        users = CustomUser.objects.all()
+        context = {'active_page': 'usuarios', 'page_title': 'Usuarios', 'users': users}
         return render(request, 'products/admin/users.html', context)
 
 

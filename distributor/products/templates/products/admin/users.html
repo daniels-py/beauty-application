@@ -17,15 +17,18 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
+                <th>Apellido</th>
                 <!-- Agrega más columnas según sea necesario -->
             </tr>
         </thead>
         <tbody>
+            <h1>prueba generica</h1>
             {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td> <!-- Asegúrate de que este campo exista en tu modelo -->
+                <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
+                <td>{{ user.last_name }}</td>
                 <!-- Agrega más campos según sea necesario -->
             </tr>
             {% endfor %}

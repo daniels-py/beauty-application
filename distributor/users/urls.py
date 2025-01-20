@@ -1,10 +1,18 @@
-from django.urls import path
-from .views import RegisterCommonUserView, RegisterEmployeeAdminView, LoginView
+from rest_framework.routers import DefaultRouter
+from django.urls import path, include
+from .views import *
+from products.views_admin import Usuarios
+
+router = DefaultRouter()
+router.register(r'usuarios', UsuarioViewSet, basename='usuarios')
+
 
 urlpatterns = [
-    # Rutas para registro
-    path('register/common/', RegisterCommonUserView.as_view(), name='register_common_user'),
-    path('register/employee-admin/', RegisterEmployeeAdminView.as_view(), name='register_employee_admin'),
-    # Ruta para login
-    path('login/', LoginView.as_view(), name='login'),
+    # Rutas del router de DRF
+    path('api/', include(router.urls)),
+
+    # Rutas específicas para redirigir a las plantillas HTML
+
+    # Rutas para vistas basadas en funciones
+
 ]
