@@ -1,6 +1,7 @@
 {% extends 'products/admin/base.html' %}
 {% load static %}
 {% load django_browser_reload %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,84 @@
 </head>
 <body>
     {% block content %}
-    <h1>hola mundo este es mi panel de controllllll</h1>
+    
+    <div class="dashboard-container">
+        <div class="control-panel">
+            <!-- Contenedor 1 -->
+            <div class="panel-item gradient-1">
+                <div class="icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Usuarios</h3>
+                <p>1,234 activos</p>
+                <div class="panel-footer">
+                    <span>+12% este mes</span>
+                </div>
+            </div>
+    
+            <!-- Contenedor 2 -->
+            <div class="panel-item gradient-2">
+                <div class="icon-wrapper">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Ventas</h3>
+                <p>$45,678</p>
+                <div class="panel-footer">
+                    <span>+8% vs mes anterior</span>
+                </div>
+            </div>
+    
+            <!-- Contenedor 3 -->
+            <div class="panel-item gradient-3">
+                <div class="icon-wrapper">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Pedidos</h3>
+                <p>892 nuevos</p>
+                <div class="panel-footer">
+                    <span>56 pendientes</span>
+                </div>
+            </div>
+    
+            <!-- Contenedor 4 -->
+            <div class="panel-item gradient-4">
+                <div class="icon-wrapper">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Reseñas</h3>
+                <p>4.8/5.0</p>
+                <div class="panel-footer">
+                    <span>128 nuevas</span>
+                </div>
+            </div>
+    
+            <!-- Contenedor 5 -->
+            <div class="panel-item gradient-5">
+                <div class="icon-wrapper">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Notificaciones</h3>
+                <p>25 sin leer</p>
+                <div class="panel-footer">
+                    <span>Ver todas</span>
+                </div>
+            </div>
+    
+            <!-- Contenedor 6 -->
+            <div class="panel-item gradient-6">
+                <div class="icon-wrapper">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3>Configuración</h3>
+                <p>Sistema</p>
+                <div class="panel-footer">
+                    <span>Actualizado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     {% endblock %}
 </body>
 </html>
