@@ -8,26 +8,22 @@
     <link rel="stylesheet" href="{% static 'admin/css/sidebar.css' %}">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <title>{% block title %}{% endblock %}</title>
+    <!-- Bloque para estilos adicionales -->
+    {% block extra_css %}
+    {% endblock %}
 </head>
 <body>
     {% include 'components/sidebar.html' %}
     <div class="content">
         <!-- Aquí se incluirá el contenido específico de cada vista -->
         {% block content %}
-        
         {% endblock %}
     </div>
-
-
     {% block extra_js %}
     <script src="{% static 'admin/js/navbar.js' %}"></script>
     <script src="{% static 'admin/js/sidebar.js' %}"></script>
     <script src="{% static 'admin/js/api/list_users.js' %}"></script>
     {% endblock %}
-
-  
-
 </body>
 </html>

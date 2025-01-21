@@ -7,15 +7,17 @@
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-
     <title>{% block title %}Usuarios{% endblock %}</title>
+    <!-- Bloque para estilos específicos de users.html -->
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'admin/css/prueba1.css' %}">
+    {% endblock %}
+    
 </head>
 <body>
     {% block content %}
     <h1>Lista de usuarios con api</h1>
     <p>Listado de productos desde la API</p>
-    
     <table id="usuarios-table">
         <thead>
             <tr>
@@ -23,16 +25,13 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Apellido</th>
+                <th>acciones</th>
             </tr>
         </thead>
         <tbody>
             <!-- Aquí se llenarán los datos con JavaScript -->
         </tbody>
     </table>
-
-
-
-    
     <table>
         <thead>
             <tr>
@@ -58,6 +57,5 @@
     </table>
     {% endblock %}
     <!-- Incluye el archivo JavaScript -->
-     
 </body>
 </html>
