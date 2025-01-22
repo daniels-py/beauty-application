@@ -1,6 +1,5 @@
 .dashboard-container {
     padding: 20px;
-    background: #f8f9fa;
     min-height: 100vh;
 }
 
@@ -14,8 +13,8 @@
 }
 
 .panel-item {
-    background: white;
-    border-radius: 20px;
+
+    border-radius: 10px;
     padding: 25px;
     position: relative;
     overflow: hidden;
@@ -28,7 +27,7 @@
 
 .panel-item:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(35, 34, 37, 0.979);
 }
 
 .icon-wrapper {
@@ -74,7 +73,7 @@
 
 /* Gradientes para cada panel */
 .gradient-1 {
-    background: linear-gradient(135deg, #6B73FF 0%, #000dffd0 100%);
+    background: linear-gradient(135deg, #8589e0 0%, #000dffd0 100%);
 }
 
 .gradient-2 {
@@ -94,7 +93,7 @@
 }
 
 .gradient-6 {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #18756d 0%, #18e25f 100%);
 }
 
 /* Media Queries para mejor responsividad */

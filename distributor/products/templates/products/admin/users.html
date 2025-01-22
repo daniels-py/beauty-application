@@ -56,6 +56,15 @@
         </tbody>
     </table>
     {% endblock %}
+
+
     <!-- Incluye el archivo JavaScript -->
+
+
+    {% block extra_js %}
+    <script src="{% static 'admin/js/api/list_users.js' %}"></script>
+    {% endblock %}
+
+
 </body>
 </html>
