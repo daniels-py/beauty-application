@@ -46,6 +46,30 @@
     color: white;
 }
 
+.panel-item.gradient-1 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
+.panel-item.gradient-2 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
+.panel-item.gradient-3 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
+.panel-item.gradient-4 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
+.panel-item.gradient-5 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
+.panel-item.gradient-6 .icon-wrapper i {
+    /* Remove incorrect class attribute */
+}
+
 .panel-item h3 {
     color: white;
     margin: 10px 0;
@@ -70,6 +94,10 @@
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9em;
 }
+
+
+
+
 
 /* Gradientes para cada panel */
 .gradient-1 {

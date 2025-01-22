@@ -32,15 +32,15 @@
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Users</span>
                     </a>
-                    <a href="#" class="nav__link {% if active_page == 'productos' %}activee{% endif %}">
+                    <a href="{% url 'productos' %}" class="nav__link {% if active_page == 'productos' %}activee{% endif %}">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Productos</span>
                     </a>
-                    <a href="#" class="nav__link {% if active_page == 'categorias' %}activee{% endif %}">
+                    <a href="{% url 'categorias' %}" class="nav__link {% if active_page == 'categorias' %}activee{% endif %}">
                         <i class='bx bx-bookmark nav__icon'></i>
                         <span class="nav__name">Categorias</span>
                     </a>
-                    <a href="#" class="nav__link">
+                    <a href="{% url 'inventario'%}" class="nav__link">
                         <i class='bx bx-folder nav__icon'></i>
                         <span class="nav__name">Inventario</span>
                     </a>

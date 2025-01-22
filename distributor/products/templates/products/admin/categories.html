@@ -1,0 +1,20 @@
+{% extends 'products/admin/base.html' %}
+{% load static %}
+{% load django_browser_reload %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+      <!-- Bloque para estilos específicos de productos.html -->
+    {% block extra_css %}
+      <link rel="stylesheet" href="{% static 'admin/css/prueba2.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h1>hola estas son mis categorias</h1>
+    {% endblock %}
+</body>
+</html>

@@ -22,6 +22,26 @@ class Usuarios(View):
         return render(request, 'products/admin/users.html', context)
 
 
+class Productos(View):
+    def get(self, request):
+        context = {'active_page': 'productos', 'page_title': 'Productos'}
+        return render(request, 'products/admin/products.html', context)
+    
+
+
+class Categorias(View):
+    def get(self, request):
+        context = {'active_page': 'categorias', 'page_title': 'Categorias'}
+        return render(request, 'products/admin/categories.html', context)
+    
+
+class Inventario(View):
+    def get(self, request):
+        context = {'active_page': 'inventario', 'page_title': 'Inventario'}
+        return render(request, 'products/admin/inventory.html', context)
+    
+
+
 
 # Función que renderiza la plantilla base
 def plantilla_base(request):

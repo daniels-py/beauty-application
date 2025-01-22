@@ -14,26 +14,22 @@
 </head>
 <body>
     {% block content %}
-    <h1>hola estas son mis productos</h1>
-pg    <table id="productos-table">
+    <h1>hola estas son mis Inventario</h1>
+    <table id="inventario-table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Marca</th>
-                <th>Categoría</th>
-                <th>Presentación</th>
-                <th>Carta de Color</th>
-                <th>Precio</th>
-                <th>Código de Barras</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Ubicación</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Aquí se llenarán los productos con JavaScript -->
+            <!-- Aquí se llenará el inventario con JavaScript -->
         </tbody>
     </table>
-    <script src="{% static 'admin/js/api/list_products.js' %}"></script>
+    <script src="{% static 'admin/js/api/list_inventory.js' %}"></script>
     {% endblock %}
 </body>
 </html>

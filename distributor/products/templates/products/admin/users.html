@@ -5,66 +5,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Usuarios{% endblock %}</title>
-    <!-- Bloque para estilos específicos de users.html -->
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    <!-- Bloque para estilos específicos de productos.html -->
     {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'admin/css/prueba1.css' %}">
+      <link rel="stylesheet" href="{% static 'admin/css/prueba2.css' %}">
     {% endblock %}
-    
 </head>
 <body>
     {% block content %}
-    <h1>Lista de usuarios con api</h1>
-    <p>Listado de productos desde la API</p>
+    <h1>hola estas son mi usuarios</h1>
     <table id="usuarios-table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
+                <th>Username</th>
                 <th>Email</th>
-                <th>Apellido</th>
-                <th>acciones</th>
+                <th>Last Name</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Aquí se llenarán los datos con JavaScript -->
+            <!-- Aquí se llenarán los usuarios con AJAX -->
         </tbody>
     </table>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Apellido</th>
-                <!-- Agrega más columnas según sea necesario -->
-            </tr>
-        </thead>
-        <tbody>
-            <p>lista de usuarios generica</p>
-            {% for user in users %}
-            <tr></tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.last_name }}</td>
-                <!-- Agrega más campos según sea necesario -->
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endblock %}
-
-
-    <!-- Incluye el archivo JavaScript -->
-
-
-    {% block extra_js %}
     <script src="{% static 'admin/js/api/list_users.js' %}"></script>
     {% endblock %}
-
-
 </body>
 </html>

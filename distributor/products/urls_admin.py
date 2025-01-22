@@ -16,6 +16,9 @@ urlpatterns = [
     # Rutas específicas para redirigir a las plantillas HTML
     path('admin/panel-de-control/', PanelDeControl.as_view(), name='panel_de_control'),
     path('admin/usuarios/', Usuarios.as_view(), name='usuarios'),  # Asegúrate de que esta línea esté presente
+    path('admin/productos/', Productos.as_view(), name='productos'),
+    path('admin/categorias/', Categorias.as_view(), name='categorias'),
+    path('admin/inventario/', Inventario.as_view(), name='inventario'),
 
     # Rutas para vistas basadas en funciones
     path('admin/base/', plantilla_base, name='plantilla_base'),
