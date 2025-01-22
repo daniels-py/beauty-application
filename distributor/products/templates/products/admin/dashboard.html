@@ -24,7 +24,7 @@
                     <i class='bx bx-user nav__icon'></i>
                 </div>
                 <h3>Usuarios</h3>
-                <p>1,234 activos</p>
+                <p id="total-usuarios">Cargando...</p>
                 <div class="panel-footer">
                     <span>+12% este mes</span>
                 </div>
@@ -36,7 +36,7 @@
                     <i class='bx bx-purchase-tag-alt'></i>
                 </div>
                 <h3>Stock de inventario</h3>
-                <p>$45,678</p>
+                <p id="total-inventario">Cargando...</p>
                 <div class="panel-footer">
                     <span>+8% vs mes anterior</span>
                 </div>
@@ -68,6 +68,7 @@
         </div>
     </div>
     
+    <script src="{% static 'admin/js/api/dashboard.js' %}"></script>
     {% endblock %}
 </body>
 </html>

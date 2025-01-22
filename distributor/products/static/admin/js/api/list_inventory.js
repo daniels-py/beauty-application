@@ -9,7 +9,7 @@ $(document).ready(function () {
             // Iteramos sobre el inventario y creamos una fila para cada uno
             inventarios.forEach(function (inventario) {
                 tbody.append(`
-                    <tr>
+                    <tr data-id="${inventario.id}">
                         <td>${inventario.id}</td>
                         <td>${inventario.producto_nombre}</td>
                         <td>${inventario.unidades}</td>
@@ -49,7 +49,7 @@ function eliminarInventario(id) {
             type: 'DELETE',
             success: function () {
                 alert('Inventario eliminado con éxito');
-                location.reload(); // Recarga la página para actualizar la lista
+                $(`tr[data-id="${id}"]`).remove(); // Elimina la fila de la tabla
             },
             error: function () {
                 alert('Error al eliminar el inventario');
