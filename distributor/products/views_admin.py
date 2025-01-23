@@ -7,6 +7,8 @@ from django.views import View
 from .models import Producto
 from users.models import CustomUser
 
+
+
 # Clase que maneja la vista del panel de control del administrador
 class PanelDeControl(View):
     def get(self, request):

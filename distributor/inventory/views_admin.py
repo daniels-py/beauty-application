@@ -3,7 +3,7 @@ from rest_framework.decorators import action
 from rest_framework import status
 from rest_framework import viewsets
 from .models import Inventario
-from .serializers import InventarioSerializer
+from .serializers_admin import InventarioSerializer
 
 class InventarioViewSet(viewsets.ModelViewSet):
     """
