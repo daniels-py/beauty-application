@@ -35,7 +35,6 @@ pip install djangorestframework
 pip install djangorestframework-simplejwt
 pip install django-browser-reload
 pip install psycopg2
-pip install django-cors-headers
 
 
 
