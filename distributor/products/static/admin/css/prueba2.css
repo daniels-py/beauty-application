@@ -128,7 +128,7 @@
 @media (max-width: 768px) {
     .control-panel {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        margin-top: 20px;
+        margin-top: 35px;
         gap: 30px;
         padding: 15px;
     }

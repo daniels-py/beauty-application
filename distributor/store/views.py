@@ -6,9 +6,10 @@ def Home(request):
     return render(request, "store/pages/home.html")
 
 
+
 class RegisterUserView(View):
     """
     Vista para renderizar la plantilla de registro de usuario común.
     """
     def get(self, request):
-        return render(request, 'auth/register.html')
+        return render(request, 'store/auth/register.html')
