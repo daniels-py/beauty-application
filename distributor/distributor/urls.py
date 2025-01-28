@@ -28,9 +28,9 @@ urlpatterns = [
     path('api/sales/', include('sales.urls')),  # Aquí enlazamos las URLs de la app sales
     # ajustes de urls de usuario dependiendo su roll
 
-    # Rutas estándar (no API) para la app 'store'
+    # Rutas estándar (centralizada) para la app 'store'
     path('store/', include('store.urls')),  # Rutas de la app 'store' (registro de usuarios comunes, etc.)
-
+    path('dashboard/', include('dashboard.urls')),
     # Extensión para cargar automáticamente vistas genéricas
     path("__reload__/", include("django_browser_reload.urls")),
 ]

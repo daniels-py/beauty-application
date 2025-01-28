@@ -1,11 +1,12 @@
 {% load static %}
 {% load django_browser_reload %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'admin/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css'%}">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>{% block title %}{% endblock %}</title>
@@ -21,10 +22,10 @@
         {% endblock %}
     </div>
 
-
     {% block extra_js %}
-    <script src="{% static 'admin/js/navbar.js' %}"></script>
-    <script src="{% static 'admin/js/sidebar.js' %}"></script>
+    <script src="{% static 'components/navbar.js' %}"></script>
+    <script src="{% static 'components/sidebar.js' %}"></script>
     {% endblock %}
+    <h1>plantilla base de mi menu pruebas</h1>
 </body>
 </html>

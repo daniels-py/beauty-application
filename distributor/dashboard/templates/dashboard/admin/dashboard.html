@@ -1,4 +1,4 @@
-{% extends 'products/admin/base.html' %}
+{% extends 'dashboard/admin/base.html' %}
 {% load static %}
 {% load django_browser_reload %}
 
@@ -7,15 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    <title>Document</title>
     <!-- Bloque para estilos específicos de dashboard.html -->
     {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'admin/css/prueba2.css' %}">
-    {% endblock %}    
+       <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+   {% endblock %}   
 </head>
 <body>
+    <h1>hola</h1>
+</body>
     {% block content %}
-    
+        
     <div class="dashboard-container">
         <div class="control-panel">
             <!-- Contenedor 1 -->
@@ -29,7 +31,7 @@
                     <span>+12% este mes</span>
                 </div>
             </div>
-    
+
             <!-- Contenedor 2 -->
             <div class="panel-item gradient-2">
                 <div class="icon-wrapper">
@@ -41,7 +43,7 @@
                     <span>+8% vs mes anterior</span>
                 </div>
             </div>
-    
+
             <!-- Contenedor 5 -->
             <div class="panel-item gradient-5">
                 <div class="icon-wrapper">
@@ -53,7 +55,7 @@
                     <span>Ver todas</span>
                 </div>
             </div>
-    
+
             <!-- Contenedor 6 -->
             <div class="panel-item gradient-6">
                 <div class="icon-wrapper">
@@ -67,8 +69,6 @@
             </div>
         </div>
     </div>
-    
-    <script src="{% static 'admin/js/api/dashboard.js' %}"></script>
+
     {% endblock %}
-</body>
 </html>
