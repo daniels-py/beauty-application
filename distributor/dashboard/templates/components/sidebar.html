@@ -24,11 +24,11 @@
                     <span class="nav__logo-name">Sistema</span>
                 </a>
                 <div class="nav__list">
-                    <a href="" class="nav__link {% if active_page == 'panel_de_control' %}activee{% endif %}">
+                    <a href="{% url 'dashboard' %}" class="nav__link {% if active_page == 'dashboard' %}activee{% endif %}">
                         <i class='bx bx-grid-alt nav__icon'></i>
                         <span class="nav__name">Dashboard</span>
                     </a>
-                    <a href="" class="nav__link {% if active_page == 'usuarios' %}activee{% endif %}">
+                    <a href="{% url 'users' %}" class="nav__link {% if active_page == 'users' %}activee{% endif %}">
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Users</span>
                     </a>
