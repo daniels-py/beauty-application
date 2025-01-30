@@ -121,6 +121,21 @@
     background: linear-gradient(135deg, #18756d 0%, #18e25f 100%);
 }
 
+/* Clase para el efecto visual durante el arrastre */
+.sortable-ghost {
+    opacity: 0.4; /* Opacidad del elemento fantasma */
+    background: #2a2a2a; /* Color de fondo del elemento fantasma */
+}
+
+.sortable-chosen {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra del elemento seleccionado */
+    transform: scale(1.05); /* Escala del elemento seleccionado */
+}
+
+.sortable-drag {
+    opacity: 0.8; /* Opacidad del elemento arrastrado */
+}
+
 /* Media Queries para mejor responsividad */
 @media (max-width: 768px) {
     .control-panel {
