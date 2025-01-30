@@ -32,7 +32,7 @@
                         <i class='bx bx-user nav__icon'></i>
                         <span class="nav__name">Users</span>
                     </a>
-                    <a href="" class="nav__link {% if active_page == 'productos' %}activee{% endif %}">
+                    <a href="{% url 'products' %}" class="nav__link {% if active_page == 'products' %}activee{% endif %}">
                         <i class='bx bx-message-square-detail nav__icon'></i>
                         <span class="nav__name">Productos</span>
                     </a>

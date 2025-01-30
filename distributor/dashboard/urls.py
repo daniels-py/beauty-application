@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
     path('users/', usersView.as_view(), name='users'),
+    path('products/', productsView.as_view(), name='products'),
 
     path('admin/base/', plantilla_base, name='plantilla_base'),
     # otras rutas del dashboard

@@ -14,7 +14,6 @@
    {% endblock %}   
 </head>
 <body>
-    <h1>hola</h1>
 </body>
     {% block content %}
         
@@ -44,17 +43,31 @@
                 </div>
             </div>
 
-            <!-- Contenedor 5 -->
-            <div class="panel-item gradient-5">
+            <!-- Contenedor 3 -->
+            <div class="panel-item gradient-3">
                 <div class="icon-wrapper">
-                    <i class='bx bx-bell'></i>
+                    <i class='bx bx-box'></i>
                 </div>
-                <h3>Notificaciones</h3>
-                <p>25 sin leer</p>
+                <h3>Total Productos</h3>
+                <p id="total-productos">Cargando...</p>
                 <div class="panel-footer">
-                    <span>Ver todas</span>
+                    <span>Actualizado recientemente</span>
                 </div>
             </div>
+
+            <!-- Contenedor 4 -->
+            <div class="panel-item gradient-4">
+                <div class="icon-wrapper">
+                    <i class='bx bx-bookmark-plus' ></i>
+                </div>
+                <h3>Marcas</h3>
+                <p id="total-marcas">Cargando...</p>
+                <div class="panel-footer">
+                    <span>Actualizado recientemente</span>
+                </div>
+            </div>
+
+
 
             <!-- Contenedor 6 -->
             <div class="panel-item gradient-6">
@@ -69,6 +82,8 @@
             </div>
         </div>
     </div>
+
+    <script src="{% static 'js/counters.js' %}"></script>
 
     {% endblock %}
 </html>

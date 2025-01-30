@@ -28,6 +28,7 @@
 .panel-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 25px rgba(35, 34, 37, 0.979);
+    filter: brightness(1.1); /* Añadir efecto de brillo al hover */
 }
 
 .icon-wrapper {
@@ -95,10 +96,6 @@
     font-size: 0.9em;
 }
 
-
-
-
-
 /* Gradientes para cada panel */
 .gradient-1 {
     background: linear-gradient(135deg, #8589e0 0%, #000dffd0 100%);
@@ -113,7 +110,7 @@
 }
 
 .gradient-4 {
-    background: linear-gradient(135deg, #FF8008 0%, #FFC837 100%);
+    background: linear-gradient(135deg, #9b6bbb 0%, #a537ff 100%);
 }
 
 .gradient-5 {
