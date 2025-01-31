@@ -28,6 +28,7 @@
 .panel-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 25px rgba(35, 34, 37, 0.979);
+    filter: brightness(1.1); /* Añadir efecto de brillo al hover */
 }
 
 .icon-wrapper {
@@ -95,10 +96,6 @@
     font-size: 0.9em;
 }
 
-
-
-
-
 /* Gradientes para cada panel */
 .gradient-1 {
     background: linear-gradient(135deg, #8589e0 0%, #000dffd0 100%);
@@ -113,7 +110,7 @@
 }
 
 .gradient-4 {
-    background: linear-gradient(135deg, #FF8008 0%, #FFC837 100%);
+    background: linear-gradient(135deg, #9b6bbb 0%, #a537ff 100%);
 }
 
 .gradient-5 {
@@ -122,6 +119,21 @@
 
 .gradient-6 {
     background: linear-gradient(135deg, #18756d 0%, #18e25f 100%);
+}
+
+/* Clase para el efecto visual durante el arrastre */
+.sortable-ghost {
+    opacity: 0.4; /* Opacidad del elemento fantasma */
+    background: #2a2a2a; /* Color de fondo del elemento fantasma */
+}
+
+.sortable-chosen {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra del elemento seleccionado */
+    transform: scale(1.05); /* Escala del elemento seleccionado */
+}
+
+.sortable-drag {
+    opacity: 0.8; /* Opacidad del elemento arrastrado */
 }
 
 /* Media Queries para mejor responsividad */
@@ -147,3 +159,4 @@
         font-size: 1.5em;
     }
 }
+

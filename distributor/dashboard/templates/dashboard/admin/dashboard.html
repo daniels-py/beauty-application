@@ -1,0 +1,102 @@
+{% extends 'dashboard/admin/base.html' %}
+{% load static %}
+{% load django_browser_reload %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    <!-- Bloque para estilos específicos de dashboard.html -->
+    {% block extra_css %}
+       <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+   {% endblock %}   
+</head>
+<body>
+</body>
+    {% block content %}
+        
+    <div class="dashboard-container">
+        <div class="control-panel" id="sortable-panel"> <!-- Añadido id para hacer el panel sortable -->
+            <!-- Contenedor 1 -->
+            <div class="panel-item gradient-1">
+                <div class="icon-wrapper">
+                    <i class='bx bx-user nav__icon'></i>
+                </div>
+                <h3>Usuarios</h3>
+                <p id="total-usuarios"></p>
+                <div class="panel-footer">
+                    <span>+12% este mes</span>
+                </div>
+            </div>
+
+            <!-- Contenedor 2 -->
+            <div class="panel-item gradient-2">
+                <div class="icon-wrapper">
+                    <i class='bx bx-purchase-tag-alt'></i>
+                </div>
+                <h3>Stock de inventario</h3>
+                <p id="total-inventario"></p>
+                <div class="panel-footer">
+                    <span>+8% vs mes anterior</span>
+                </div>
+            </div>
+
+            <!-- Contenedor 3 -->
+            <div class="panel-item gradient-3">
+                <div class="icon-wrapper">
+                    <i class='bx bx-box'></i>
+                </div>
+                <h3>Total Productos</h3>
+                <p id="total-productos"></p>
+                <div class="panel-footer">
+                    <span>Actualizado recientemente</span>
+                </div>
+            </div>
+
+            <!-- Contenedor 4 -->
+            <div class="panel-item gradient-4">
+                <div class="icon-wrapper">
+                    <i class='bx bx-bookmark-plus' ></i>
+                </div>
+                <h3>Marcas</h3>
+                <p id="total-marcas"></p>
+                <div class="panel-footer">
+                    <span>Actualizado recientemente</span>
+                </div>
+            </div>
+
+
+
+            <!-- Contenedor 6 -->
+            <div class="panel-item gradient-6">
+                <div class="icon-wrapper">
+                    <i class='bx bx-cog' ></i>
+                </div>
+                <h3>Configuración</h3>
+                <p>Sistema</p>
+                <div class="panel-footer">
+                    <span>Actualizado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir la biblioteca SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="{% static 'js/counters.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar SortableJS en el panel con id 'sortable-panel'
+            var sortable = new Sortable(document.getElementById('sortable-panel'), {
+                animation: 150, // Duración de la animación en ms
+                ghostClass: 'sortable-ghost', // Clase para el elemento fantasma
+                chosenClass: 'sortable-chosen', // Clase para el elemento seleccionado
+                dragClass: 'sortable-drag' // Clase para el elemento arrastrado
+            });
+        });
+    </script>
+
+    {% endblock %}
+</html>

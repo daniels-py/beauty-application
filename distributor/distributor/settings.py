@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'products',
     'inventory',
     'sales',
+    'store',
+    #centralizadas
+    'dashboard',
+    
     #complementos y frameworks
     'rest_framework',
     'rest_framework_simplejwt',

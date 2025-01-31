@@ -1,4 +1,4 @@
-{% extends 'products/admin/base.html' %}
+{% extends 'dashboard/admin/base.html' %}
 {% load static %}
 {% load django_browser_reload %}
 <!DOCTYPE html>
@@ -9,27 +9,32 @@
     <title>{% block title %}{{ page_title }}{% endblock %}</title>
       <!-- Bloque para estilos específicos de productos.html -->
     {% block extra_css %}
-      <link rel="stylesheet" href="{% static 'admin/css/prueba2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/user.css' %}">
     {% endblock %}
 </head>
 <body>
     {% block content %}
-    <h1>hola estas son mis Inventario</h1>
-    <table id="inventario-table">
+    <h1>hola estas son mis productos</h1>
+       <table id="productos-table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Ubicación</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Categoría</th>
+                <th>Presentación</th>
+                <th>Carta de Color</th>
+                <th>Precio</th>
+                <th>Código de Barras</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Aquí se llenará el inventario con JavaScript -->
+            <!-- Aquí se llenarán los productos con JavaScript -->
         </tbody>
     </table>
-    <script src="{% static 'admin/js/api/list_inventory.js' %}"></script>
+    
+    <script src="{% static '/js/products' %}"></script>
     {% endblock %}
 </body>
 </html>

@@ -1,4 +1,4 @@
-{% extends 'products/admin/base.html' %}
+{% extends 'dashboard/admin/base.html' %}
 {% load static %}
 {% load django_browser_reload %}
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ page_title }}{% endblock %}</title>
     {% block extra_css %}
-      <link rel="stylesheet" href="{% static 'admin/css/prueba3.css' %}">
+        <link rel="stylesheet" href="{% static 'css/user.css' %}">
     {% endblock %}
 </head>
 <body>
@@ -45,7 +45,8 @@
             </table>
         </div>
     </div>
-    <script src="{% static 'admin/js/api/list_users.js' %}"></script>
+    
+    <script src="{% static 'js/users.js' %}"></script>
     {% endblock %}
 </body>
 </html>
