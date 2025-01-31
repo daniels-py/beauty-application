@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'users',
     'products',
     'inventory',
-    'store',
     'sales',
     #complementos y frameworks
     'rest_framework',
