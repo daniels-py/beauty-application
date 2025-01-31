@@ -27,9 +27,8 @@ urlpatterns = [
     path('api/inventory/', include('inventory.urls')),  # Rutas de la app 'inventory'
     path('api/sales/', include('sales.urls')),  # Aquí enlazamos las URLs de la app sales
     # ajustes de urls de usuario dependiendo su roll
-
-    # Rutas estándar (no API) para la app 'store'
-    path('store/', include('store.urls')),  # Rutas de la app 'store' (registro de usuarios comunes, etc.)
+    path('api/dashboard/', include('dashboard.urls')),  # Rutas de la app 'dashboard'
+    # Rutas estándar (no API) para la app 'store'   
 
     # Extensión para cargar automáticamente vistas genéricas
     path("__reload__/", include("django_browser_reload.urls")),

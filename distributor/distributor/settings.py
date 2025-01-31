@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'products',
     'inventory',
     'sales',
-    'store',
     #centralizadas
     'dashboard',
     
