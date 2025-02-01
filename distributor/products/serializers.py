@@ -25,6 +25,12 @@ class CartaColorSerializer(serializers.ModelSerializer):
         fields = ['id', 'codigo_color', 'nombre_color', 'hexadecimal', 'marca']
 
 class ProductoSerializer(serializers.ModelSerializer):
+    marca = serializers.StringRelatedField()
+    categoria = serializers.StringRelatedField()
+    presentacion = serializers.StringRelatedField()
+    carta_color = CartaColorSerializer()
+    # esto es para poder ver la marca en el serializer asociado a mi carta de color
+
     class Meta:
         model = Producto
         fields = ['id', 'nombre', 'marca', 'categoria', 'presentacion', 'carta_color', 'precio', 'codigo_barras']

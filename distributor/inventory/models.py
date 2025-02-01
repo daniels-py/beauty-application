@@ -1,14 +1,14 @@
+# inventory/models.py
 from django.db import models
-from products.models import Producto  # Asegúrate de importar correctamente el modelo Producto
-from django.utils.timezone import now
+from products.models import Producto  # Asegúrate de importar el modelo Producto
 
 class Inventario(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name="inventarios")
-    unidades = models.PositiveIntegerField()
-    fecha_ingreso = models.DateField(default=now, verbose_name="Fecha de Ingreso")  # Cambiado
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='inventario_inventory')
+    unidades = models.PositiveIntegerField(default=0, verbose_name='Unidades Disponibles')
+    fecha_ingreso = models.DateField(auto_now_add=True, verbose_name='Fecha de Ingreso')
 
     def __str__(self):
-        return f"{self.producto.nombre} - Unidades: {self.unidades}"
+        return f'{self.producto.nombre} - {self.unidades} unidades'
 
     class Meta:
         verbose_name = 'Inventario'
