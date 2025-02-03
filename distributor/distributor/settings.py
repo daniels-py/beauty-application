@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'dashboard',
     
     #complementos y frameworks
+    'django_filters',
     'rest_framework',
     'rest_framework_simplejwt',
     'django_browser_reload',# nombre de aplicacion para recargar el serviro web
@@ -90,8 +91,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],  # Agregar esta línea
 }
-
 
 
 

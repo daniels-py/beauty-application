@@ -34,6 +34,7 @@ pip install django
 pip install djangorestframework
 pip install djangorestframework-simplejwt
 pip install django-browser-reload
+pip install django-filter
 pip install psycopg2
 
 

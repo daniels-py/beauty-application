@@ -5,7 +5,10 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 from collections import defaultdict
-
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 
@@ -41,19 +44,27 @@ class CartaColorViewSet(viewsets.ModelViewSet):
             grouped_data[item['marca']].append(item)
 
         return Response(grouped_data)
-    
-    
+
+
+
+class ProductoPagination(PageNumberPagination):
+    page_size = 10  # Número de productos por página
+    page_size_query_param = 'page_size'
+    max_page_size = 50
+
+
 class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
+    queryset = Producto.objects.select_related('marca', 'categoria', 'presentacion').order_by('nombre')  # Agregado el ordenamiento por nombre
     serializer_class = ProductoSerializer
+    #permission_classes = [IsAuthenticatedOrReadOnly]  # Solo usuarios autenticados pueden modificar
+    pagination_class = ProductoPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['marca', 'categoria', 'presentacion']
+
     @action(detail=False, methods=['get'], url_path='total')
     def total_productos(self, request):
         """
-        Método para contar el número total de productos.
+        Devuelve el número total de productos.
         """
         total_productos = Producto.objects.count()
-        return Response({
-            'total_productos': total_productos
-        }, status=status.HTTP_200_OK)
-
-
+        return Response({'total_productos': total_productos}, status=status.HTTP_200_OK)

@@ -12,3 +12,12 @@ class InventarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Inventario
         fields = ['id', 'producto', 'producto_nombre', 'producto_marca', 'producto_categoria', 'unidades', 'fecha_ingreso','precio_producto','nombrecolor','codigo_color']
+
+    def validate(self, data):
+        """
+        Validación personalizada para evitar duplicados de productos en el inventario.
+        """
+        producto = data.get('producto')
+        if Inventario.objects.filter(producto=producto).exists():
+            raise serializers.ValidationError(f"El producto {producto.nombre} ya está en el inventario.")
+        return data
